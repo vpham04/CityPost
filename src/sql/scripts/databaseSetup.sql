@@ -27,7 +27,6 @@ drop table customer;
 CREATE TABLE Customer (
     CID 		    integer, 
     Name		    char(20),
-    Password 		char(20),
     PhoneNumber 	char(10),
     primary key (CID));
                
