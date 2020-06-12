@@ -1,3 +1,4 @@
+drop table accounts;
 drop table intransit_parcel;
 drop table parcel;
 drop table stored_parcel;
@@ -27,15 +28,14 @@ CREATE TABLE Customer (
     CID 		    integer, 
     Name		    char(20),
     Password 		char(20),
-    Username 		char(20) Unique not NULL,
     PhoneNumber 	char(10),
     primary key (CID));
                
-insert into Customer(CID, Name, Password, Username, PhoneNumber) values (1, "John Smith", "qwerty123", "JS86", "6041234567");
-insert into Customer(CID, Name, Password, Username, PhoneNumber) values (2, "Bob Daniel", "abcdefgh1", "BobbySublime", "6043334422");
-insert into Customer(CID, Name, Password, Username, PhoneNumber) values (3, "Johnny James", "password", "Johnny32", "6044221345");               
-insert into Customer(CID, Name, Password, Username, PhoneNumber) values (4, "Amber Jones", "BJones23", "AmberJones", "6049901323");
-insert into Customer(CID, Name, Password, Username, PhoneNumber) values  (5, "Karl Smith", "password", "JS96", "6042301323");              
+insert into Customer(CID, Name, PhoneNumber) values (1, "John Smith", "6041234567");
+insert into Customer(CID, Name, PhoneNumber) values (2, "Bob Daniel", "6043334422");
+insert into Customer(CID, Name, PhoneNumber) values (3, "Johnny James", "6044221345");               
+insert into Customer(CID, Name, PhoneNumber) values (4, "Amber Jones", "6049901323");
+insert into Customer(CID, Name, PhoneNumber) values  (5, "Karl Smith", "6042301323");              
                
 CREATE TABLE OrderedParcel(
     OID         integer,
@@ -403,3 +403,32 @@ insert into IntransitParcel(VID, SSN) values (62362362, 626343188);
 insert into IntransitParcel(VID, SSN) values (65232725, 626343111);       
 insert into IntransitParcel(VID, SSN) values (41236172, 626343187);                  
 insert into IntransitParcel(VID, SSN) values (62562652, 626343189);               
+
+CREATE TABLE Accounts(
+    Password        char(20), 
+    Username        char(20),
+    LvlAccess       integer,
+    CID             integer,
+    SSN             integer,
+    primary key (Username),
+    foreign key (SSN) references Employee (SSN)
+        on delete no action,
+    foreign key (CID) references Customer (CID)
+        on delete cascade
+    );
+    
+insert into Accounts (Password, Username, LvlAccess, CID, SSN) values ("qwerty123", "JS86", 1, 1, NULL);
+insert into Accounts (Password, Username, LvlAccess, CID, SSN) values ("abcdefgh1", "BobbySublime", 1, 2, NULL);
+insert into Accounts (Password, Username, LvlAccess, CID, SSN) values ("password", "Johnny32", 1, 3, NULL);
+insert into Accounts (Password, Username, LvlAccess, CID, SSN) values ("BJones23", "AmberJones", 1, 4, NULL);
+insert into Accounts (Password, Username, LvlAccess, CID, SSN) values ("password", "JS96", 1 ,5, NULL);
+insert into Accounts (Password, Username, LvlAccess, CID, SSN) values ("James", "Harden", 3, NULL, 626343182);
+insert into Accounts (Password, Username, LvlAccess, CID, SSN) values ("ABCD321", "Damian", 3, NULL, 126343183);
+insert into Accounts (Password, Username, LvlAccess, CID, SSN) values ("Alphabet", "Johnny", 3, NULL, 226343184);
+insert into Accounts (Password, Username, LvlAccess, CID, SSN) values ("Lion", "UsmanG", 3, NULL, 153431851);
+insert into Accounts (Password, Username, LvlAccess, CID, SSN) values ("Jordan", "Michael", 3, NULL, 626343110);
+insert into Accounts (Password, Username, LvlAccess, CID, SSN) values ("Phamily", "Viet", 2, NULL, 999999999);
+insert into Accounts (Password, Username, LvlAccess, CID, SSN) values ("asdlfh1", "Corn23", 2, NULL, 626343187);
+insert into Accounts (Password, Username, LvlAccess, CID, SSN) values ("asdf23r12", "Mary", 2, NULL, 626343188);
+insert into Accounts (Password, Username, LvlAccess, CID, SSN) values ("43413AGdff", "Lamb", 2, NULL, 626343189);
+insert into Accounts (Password, Username, LvlAccess, CID, SSN) values ("Lebron", "AaronJames", 2, NULL, 626343111);        
