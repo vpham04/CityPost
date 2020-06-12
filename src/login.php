@@ -2,19 +2,26 @@
 <html>
 
 <head>
-    <title>Login</title>
+    <title>Welcome To CityPost</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1>Contact information</h1>
-    <p id="contact">Email:city@post.ca | Phone: (123) 456-7890
-        <br> Address: 123 Main Street Vancouver, BC, Canada </p>
+    <h1>Welcome!</h1>
+    <input type="text" name="username" placeholder="username">
+    <input type="text" name="password" placeholder="password">
     <br />
-    <h1>Login Page</h1>
+    <input type="submit" value="Login">
+    <button onclick="window.location.href='/src/makeaccount.html';">
+        Sign up
+    </button>
+    <br />
     <a href="/src/main.php">Go back</a>
     <br />
-    <a href="/src/makeaccount.html">Make an account</a>
-
+    <div id="contact">
+        <h2>Contact information</h1>
+            <p>Address: 123 Main Street Vancouver, BC, Canada | Email:city@post.ca | Phone: (123) 456-7890 </p>
+    </div>
 </body>
 
 </html>

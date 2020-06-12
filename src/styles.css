@@ -1,54 +1,53 @@
- /* Makes it wrap all the way to the end*/
- html,
- body {
-     margin: 0;
-     padding: 0;
- }
+/* Makes it wrap all the way to the end*/
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
 
- h1 {
-     text-align: center;
-     color: white;
-     background-color: rgb(102, 102, 102);
-     font-size: 50px;
-     padding: 40px 40px 40px 40px;
-     margin: 0px;
- }
+h1 {
+  text-align: center;
+  color: white;
+  background-color: rgb(102, 102, 102);
+  font-size: 50px;
+  padding: 40px 40px 40px 40px;
+  margin: 0px;
+}
 
+body {
+  background-color: #8cd38c;
+}
 
- body {
-     background-color: #8cd38c;
- }
+#contact {
+  position: absolute;
+  text-align: center;
+  bottom: 0px;
+  left: 11%;
+}
 
- #contact {
-     font-size: 20px;
-     text-align: center;
-     margin: -55px;
- }
+p {
+  /* margin: 60px 30px 30px 60px; */
+}
 
- p {
-     margin: 60px 30px 30px 60px;
- }
+#slogan {
+  margin-top: 25px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 40px;
+  text-align: center;
+  color: white;
+}
 
- #slogan {
-     margin-top: 25px;
-     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     font-size: 40px;
-     text-align: center;
-     color: white;
- }
+.image {
+  margin-top: 50px;
+  margin-left: 75px;
+  margin-right: 100px;
+}
 
+#package {
+  width: 90%;
+  height: 90%;
+}
 
- .image {
-     margin-top: 50px;
-     margin-left: 75px;
-     margin-right: 100px;
- }
-
- #package {
-     width: 90%;
-     height: 90%;
- }
-
- body {
-     overflow-x: hidden;
- }
+body {
+  overflow-x: hidden;
+}
