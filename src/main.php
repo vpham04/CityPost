@@ -13,8 +13,8 @@
 
         <p id="slogan">We get your packages to you!</p>
 
-        <a href="login.php" style='margin:0 auto; display: block; width: 60%;'>
-            <img id="package" class="image" src="../Resources/Package.svg">
+        <a href="/src/login.php" style='margin:0 auto; display: block; width: 60%;'>
+            <img id="package" class="image" src="../resources/Package.svg">
         </a>
     </body>
 </html>
