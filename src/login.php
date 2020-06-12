@@ -1,27 +1,20 @@
-<!DOCTYPE html>
-<html>
+<?php
+include 'connect.php';
+$conn = OpenCon();
 
-<head>
-    <title>Welcome To CityPost</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+$username = $_POST['username'];
+$password = $_POST['password'];
 
-<body>
-    <h1>Welcome!</h1>
-    <input type="text" name="username" placeholder="username">
-    <input type="text" name="password" placeholder="password">
-    <br />
-    <input type="submit" value="Login">
-    <button onclick="window.location.href='/src/makeaccount.html';">
-        Sign up
-    </button>
-    <br />
-    <a href="/src/main.php">Go back</a>
-    <br />
-    <div id="contact">
-        <h2>Contact information</h1>
-            <p>Address: 123 Main Street Vancouver, BC, Canada | Email:city@post.ca | Phone: (123) 456-7890 </p>
-    </div>
-</body>
+$sql = "SELECT Username, Password FROM Accounts
+WHERE Username = '$username' AND Password = '$password'";
+$result = $conn->query($sql);
 
-</html>
+if ($result->num_rows > 0) {
+    echo "Logged in";
+} else {
+    /* This line says duplicate PK inserted even on first insert
+    but still inserts it while spitting out the error
+    */
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+CloseCon($conn);
