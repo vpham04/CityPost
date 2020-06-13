@@ -60,9 +60,9 @@ session_start();
     </div>
 
     <div class="customer-options">
-        <button class="customer-option-button">Order History</button>
+        <button onclick="window.location.href='/src/OrderHistory.php'" class="customer-option-button">Order History</button>
         <!-- add php -->
-        <button class="customer-option-button">Place Order</button>
+        <button onclick="window.location.href='/src/PlaceOrder.php'" class="customer-option-button">Place Order</button>
         <!-- add php -->
     </div>
 </body>
