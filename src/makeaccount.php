@@ -17,7 +17,6 @@ $max = "SELECT MAX(CID) as cid FROM Customer";
 $resultmax = $conn->query($max);
 $row = $resultmax->fetch_assoc();
 $cid = $row['cid'] + 1;
-echo $cid;
 
 $sql1 = "INSERT INTO Customer(CID, Name, PhoneNumber)
 VALUES ($cid, '$name', $phonenumber)";
