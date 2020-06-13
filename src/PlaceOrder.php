@@ -24,26 +24,6 @@ session_start();
             float: left;
         }
 
-        .customer-option-button {
-            background-color: blue;
-            border: 2px solid black;
-            border-radius: 4px;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            display: inline-block;
-            font-size: 16px;
-            transition-duration: 0.4s;
-        }
-
-        .customer-option-button:hover {
-            background-color: darkblue;
-            color: white;
-        }
-
-        .customer-options {
-            text-align: center;
-        }
     </style>
 </head>
 
@@ -72,11 +52,11 @@ session_start();
 		<label for="DropOffAddress">DropOffAddress</label>
 		<input type="text" name="DropOffAddress" placeholder=""><br><br>
 
-        <div class="customer-page-button"> 
-            <button onclick="window.location.href='/src/customer.php'" class="customer-page-button">Cancel Order</button>
-        </div>
         <input type="submit" value="Place Order">
 	</form> 
+	<div class="customer-page-button"> 
+            <button onclick="window.location.href='/src/customer.php'" class="customer-page-button">Cancel Order</button>
+        </div>
 </body>
 
 </html>

@@ -10,6 +10,9 @@ echo $selected_radio . "\n";
 echo $PickupAddress . "\n";
 echo $DropOffAddress . "\n";
 
+// TODO: When hit submit, create order, parcel, etc
+// 		 Invoice page after successfully placed order?
+		 
 
 // $conn->begin_transaction();
 
