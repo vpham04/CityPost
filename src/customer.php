@@ -55,7 +55,7 @@ session_start();
         ?>
         <!-- php for customer info -->
         <div class="logout">
-            <button class="logout-button">Logout</button>
+            <button onclick="window.location.href='/src/login.html'" class="logout-button">Logout</button>
         </div>
     </div>
 
