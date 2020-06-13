@@ -22,23 +22,24 @@ session_start();
         </div>
     </div>
 
-    <form action="/.php" method="post">
-        <label for="Size">Large</label>
-		<input type="radio" name="Size" value="male">
+    <form action="OrderHandler.php" method="post">
+        <label for="Large">Large</label>
+		<input type="radio" name="Size" value="Large">
 		
         <label for="Medium">Medium</label>
-		<input type="radio" name="Size"  value="female">
+		<input type="radio" name="Size" value="Medium">
 		
         <label for="Small">Small</label>
-		<input type="radio" name="Size" value="other"><br><br>
+		<input type="radio" name="Size" value="Small"><br><br>
 
 		<label for="PickupAddress">Pickup Location</label>
-		<input type="text" placeholder=""><br><br>
-		<label for="DropOffAddres">DropOffAddress</label>
-		<input type="text" placeholder=""><br><br>
+		<input type="text" name="PickupAddress" placeholder=""><br><br>
+		<label for="DropOffAddress">DropOffAddress</label>
+		<input type="text" name="DropOffAddress" placeholder=""><br><br>
 
         <input type="submit" value="Place Order">
-    </form> 
+	</form> 
+	
 
 </body>
 
