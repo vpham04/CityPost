@@ -12,9 +12,25 @@ $sql = "INSERT INTO Accounts(Username, Password, LvlAccess, CID, SSN)
 VALUES ('$username', '$password', 1, NULL, NULL)";
 $result = $conn->query($sql);
 
-if ($result == TRUE) {
+$max = "SELECT MAX(CID) as cid FROM Customer";
+$resultmax = $conn->query($max);
+$row = $resultmax->fetch_assoc();
+$cid = $row['cid'] + 1;
+echo $cid;
+
+$sql1 = "INSERT INTO Customer(CID, Name, PhoneNumber)
+VALUES ($cid, '$name', $phonenumber)";
+$result1 = $conn->query($sql1);
+
+if ($result == true & $result1 == true) {
     echo "New account created successfully";
-} else {
-    echo "Please choose another password";
+} else if ($result == false & $result1 == false) {
+    echo "Failed making an account";
+}
+// else if ($result1 == false) {
+//     echo "CID already exist";
+// }
+else {
+    echo "Please choose another username";
 }
 CloseCon($conn);
