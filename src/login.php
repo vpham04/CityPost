@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include 'connect.php';
 $conn = OpenCon();
 
@@ -12,6 +14,9 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     $printname = $username;
+    $_SESSION["username"] = $username;
+    header("Location: /src/customer.php");
+    exit;
 } else {
     // echo "Error: " . $sql . "<br>" . $conn->error;
     $printname = 'Account not found';
@@ -19,7 +24,8 @@ if ($result->num_rows > 0) {
 CloseCon($conn);
 ?>
 
-<html>
+
+<!-- <html>
 
 <head>
     <title>Welcome To CityPost</title>
@@ -51,4 +57,4 @@ CloseCon($conn);
     </div>
 </body>
 
-</html>
+</html> -->
