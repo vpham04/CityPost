@@ -21,9 +21,21 @@ session_start();
         }
 
         .customer-page-button {
-            float: left;
+			background-color: blue;
+            border: 2px solid black;
+            border-radius: 0px;
+            color: white;
+            padding: 10px 10px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            transition-duration: 0.4s;
         }
-
+ 
+        .customer-page-button:hover {
+            background-color: darkblue;
+            color: white;
+        }
     </style>
 </head>
 
@@ -54,6 +66,7 @@ session_start();
 
         <input type="submit" value="Place Order">
 	</form> 
+
 	<div class="customer-page-button"> 
             <button onclick="window.location.href='/src/customer.php'" class="customer-page-button">Cancel Order</button>
         </div>
