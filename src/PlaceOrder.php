@@ -7,7 +7,44 @@ session_start();
 
 <head>
     <Title>Place An Order</Title>
-   
+	<style>
+        .header {
+            background-color: rgb(102, 102, 102);
+            padding: 40px 40px 40px 40px;
+            margin: 0px;
+        }
+
+        body {
+            background-color: #8cd38c;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .customer-page-button {
+            float: left;
+        }
+
+        .customer-option-button {
+            background-color: blue;
+            border: 2px solid black;
+            border-radius: 4px;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            transition-duration: 0.4s;
+        }
+
+        .customer-option-button:hover {
+            background-color: darkblue;
+            color: white;
+        }
+
+        .customer-options {
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,10 +53,8 @@ session_start();
         <?php
         echo "Username: " . $_SESSION["username"] . "<br/>";
         ?>
-        <!-- php for customer info -->
-        <div class="logout">
-            <button onclick="window.location.href='/src/login.html'" class="logout-button">Logout</button>
-        </div>
+        <!- -->
+
     </div>
 
     <form action="OrderHandler.php" method="post">
@@ -37,10 +72,11 @@ session_start();
 		<label for="DropOffAddress">DropOffAddress</label>
 		<input type="text" name="DropOffAddress" placeholder=""><br><br>
 
+        <div class="customer-page-button"> 
+            <button onclick="window.location.href='/src/customer.php'" class="customer-page-button">Cancel Order</button>
+        </div>
         <input type="submit" value="Place Order">
 	</form> 
-	
-
 </body>
 
 </html>
