@@ -9,7 +9,7 @@ session_start();
     <Title>Place An Order</Title>
 	<style>
         .header {
-            background-color: rgb(102, 102, 102);
+            background-color: rgb(75, 100, 135);
             padding: 40px 40px 40px 40px;
             margin: 0px;
         }
@@ -46,7 +46,6 @@ session_start();
         echo "Username: " . $_SESSION["username"] . "<br/>";
         ?>
         <!- -->
-
     </div>
 
     <form action="OrderHandler.php" method="post">

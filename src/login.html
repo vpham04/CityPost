@@ -1,76 +1,76 @@
 <!DOCTYPE html>
 <html>
-    <style>
-        .credentials {
-            height: 200px;
-            width: 400px;
-            size: 200%;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            margin-top: -100px;
-            margin-left: -200px;
-            vertical-align: middle;
-        }
-        
-        .header {
-            background-color: rgb(102, 102, 102);
-            padding: 40px 40px 40px 40px;
-            margin: 0px;
-        }
+<style>
+    .credentials {
+        height: 200px;
+        width: 400px;
+        size: 200%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -200px;
+        vertical-align: middle;
+    }
 
-        body {
-            background-color: #8cd38c;
-            margin: 0px;
-            padding: 0px;
-        }
+    .header {
+        background-color: rgb(75, 100, 135);
+        padding: 40px 40px 40px 40px;
+        margin: 0px;
+    }
 
-        .go-back-button {
-            float: right;
-        }
+    body {
+        background-color: #8cd38c;
+        margin: 0px;
+        padding: 0px;
+    }
 
-        .credentials {
-            text-align: center;
-        }
+    .go-back-button {
+        float: right;
+    }
 
-        .credentials-button {
-            border: 2px solid black;
-            border-radius: 4px;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            display: inline-block;
-            font-size: 16px;
-            transition-duration: 0.4s;
-        }
+    .credentials {
+        text-align: center;
+    }
 
-        #credential-button-login {
-            background-color: green;
-            margin-left: -100px;
-        }
+    .credentials-button {
+        border: 2px solid black;
+        border-radius: 4px;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        transition-duration: 0.4s;
+    }
 
-        #credential-button-login:hover {
-            background-color: darkgreen;
-            color: white;
-        }
+    #credential-button-login {
+        background-color: green;
+        margin-left: -100px;
+    }
 
-        #credential-button-signup {
-            background-color: red;
-            margin-right: -15px;
-        }
+    #credential-button-login:hover {
+        background-color: darkgreen;
+        color: white;
+    }
 
-        #credential-button-signup:hover {
-            background-color: darkred;
-        }
+    #credential-button-signup {
+        background-color: red;
+        margin-right: -15px;
+    }
 
-        .credentials-text {
-            height: 50px;
-            width: 300px;
-            font-size: 18px;
-            margin-bottom: 25px;
-        }
+    #credential-button-signup:hover {
+        background-color: darkred;
+    }
 
-    </style>
+    .credentials-text {
+        height: 50px;
+        width: 300px;
+        font-size: 18px;
+        margin-bottom: 25px;
+    }
+</style>
+
 <head>
     <title>Welcome To CityPost</title>
     <link rel="stylesheet" href="styles.css">
@@ -88,11 +88,12 @@
         <input class="credentials-text" type="text" name="password" placeholder="password">
         <br />
         <input class="credentials-button" id="credential-button-login" type="submit" value="Login">
-        <button class="credentials-button" id="credential-button-signup" onclick="window.location.href='../src/makeaccount.html';">
+        <button class="credentials-button" id="credential-button-signup"
+            onclick="window.location.href='../src/makeaccount.html';">
             Sign up
         </button>
     </form>
-    <br/>
+    <br />
     <br />
     <div id="contact">
         <h2>Contact information</h1>

@@ -8,9 +8,10 @@ body {
 h1 {
   text-align: center;
   color: white;
-  background-color: rgb(102, 102, 102);
+  background-color: rgb(75, 100, 135);
   font-size: 50px;
   padding: 40px 40px 40px 40px;
+
   margin: 0px;
 }
 
@@ -25,7 +26,8 @@ body {
   left: 11%;
 }
 
-*/ #username {
+
+#username {
   font-size: 70%;
   /* margin-top: 10px; */
   margin-bottom: -25px;

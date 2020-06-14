@@ -9,7 +9,7 @@ session_start();
     <Title>My Account</Title>
     <style>
         .header {
-            background-color: rgb(102, 102, 102);
+            background-color: rgb(75, 100, 135);
             padding: 40px 40px 40px 40px;
             margin: 0px;
         }
