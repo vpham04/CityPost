@@ -15,7 +15,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     $printname = $username;
     $_SESSION["username"] = $username;
-    header("Location: /src/customer.php");
+    header("Location: ../src/customer.php");
     exit;
 } else {
     // echo "Error: " . $sql . "<br>" . $conn->error;

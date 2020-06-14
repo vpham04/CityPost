@@ -1,29 +1,3 @@
-drop table accounts;
-drop table intransit_parcel;
-drop table parcel;
-drop table stored_parcel;
-drop table sets_route;
-drop table assigned_route;
-drop table scheduled_employee
-drop table create_schedule;
-drop table warehouse;
-drop table invoice;
-drop table managed_office;
-drop table office;
-drop table drives_vehicle;
-drop table courier;
-drop table schedule_time;
-drop table schedule;
-drop table employee;
-drop table order_eta;
-drop table ordered_on;
-drop table order_orig;
-drop table order_dest;
-drop table order_status;
-drop table placed_order;
-drop table order_parcel;
-drop table customer;
-
 CREATE TABLE Customer (
     CID 		    integer, 
     Name		    char(20),

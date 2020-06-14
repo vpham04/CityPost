@@ -68,7 +68,7 @@ session_start();
 	</form> 
 
 	<div class="customer-page-button"> 
-            <button onclick="window.location.href='/src/customer.php'" class="customer-page-button">Cancel Order</button>
+            <button onclick="window.location.href='../src/customer.php'" class="customer-page-button">Cancel Order</button>
         </div>
 </body>
 
