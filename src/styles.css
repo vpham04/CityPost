@@ -4,14 +4,16 @@ body {
   background-color: #8cd38c;
   margin: 0px;
   padding: 0px;
+  overflow-x: hidden;
 }
 
 h1 {
   text-align: center;
   color: white;
-  background-color: rgb(102, 102, 102);
+  background-color: rgb(75, 100, 135);
   font-size: 50px;
   padding: 40px 40px 40px 40px;
+
   margin: 0px;
 }
 
@@ -45,10 +47,6 @@ h1 {
 #package {
   width: 90%;
   height: 90%;
-}
-
-body {
-  overflow-x: hidden;
 }
 
 .credentials {
