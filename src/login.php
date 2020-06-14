@@ -8,15 +8,23 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 $printname;
 
-$sql = "SELECT Username, Password FROM Accounts
+$sql = "SELECT Username, Password, LvlAccess FROM Accounts
 WHERE Username = '$username' AND Password = '$password'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     $_SESSION["username"] = $username;
-    // $_SESSION["password"] = $password;
-    header("Location: ../src/customer.php");
-    exit;
+    $lvl  = $result->fetch_assoc();
+    if ($lvl["LvlAccess"] == 1) {
+        header("Location: ../src/customer.php");
+        exit;
+    } else if ($lvl["LvlAccess"] == 2) {
+        header("Location: ../src/courier.php");
+        exit;
+    } else {
+        header("Location: ../src/manager.php");
+        exit;
+    }
 } else {
     echo "Account not found";
 }
