@@ -1,24 +1,98 @@
 <!DOCTYPE html>
 <html>
+    <style>
+        .credentials {
+            height: 200px;
+            width: 400px;
+            size: 200%;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -200px;
+            vertical-align: middle;
+        }
+        
+        .header {
+            background-color: rgb(102, 102, 102);
+            padding: 40px 40px 40px 40px;
+            margin: 0px;
+        }
 
+        body {
+            background-color: #8cd38c;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .go-back-button {
+            float: right;
+        }
+
+        .credentials {
+            text-align: center;
+        }
+
+        .credentials-button {
+            border: 2px solid black;
+            border-radius: 4px;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            transition-duration: 0.4s;
+        }
+
+        #credential-button-login {
+            background-color: green;
+            margin-left: -100px;
+        }
+
+        #credential-button-login:hover {
+            background-color: darkgreen;
+            color: white;
+        }
+
+        #credential-button-signup {
+            background-color: red;
+            margin-right: -15px;
+        }
+
+        #credential-button-signup:hover {
+            background-color: darkred;
+        }
+
+        .credentials-text {
+            height: 50px;
+            width: 300px;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+    </style>
 <head>
     <title>Welcome To CityPost</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1>Welcome!</h1>
-    <form action="login.php" method="post">
-        <input type="text" name="username" placeholder="username">
-        <input type="text" name="password" placeholder="password">
+    <div class="header">
+        <h1>Welcome!</h1>
+        <div class="go-back">
+            <button onclick="window.location.href='../src/main.html'" class="go-back-button">Go back</button>
+        </div>
+    </div>
+    <form class="credentials" action="login.php" method="post">
+        <input class="credentials-text" type="text" name="username" placeholder="username">
+        <input class="credentials-text" type="text" name="password" placeholder="password">
         <br />
-        <input type="submit" value="Login">
+        <input class="credentials-button" id="credential-button-login" type="submit" value="Login">
+        <button class="credentials-button" id="credential-button-signup" onclick="window.location.href='../src/makeaccount.html';">
+            Sign up
+        </button>
     </form>
-    <button onclick="window.location.href='../src/makeaccount.html';">
-        Sign up
-    </button>
-    <br />
-    <a href="../src/main.html">Go back</a>
+    <br/>
     <br />
     <div id="contact">
         <h2>Contact information</h1>

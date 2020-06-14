@@ -54,7 +54,9 @@ session_start();
         echo "Hi " . $_SESSION["username"] . "<br/>";
         ?>
         <!-- php for customer info -->
-        <div class="logout">
+        <div class="account">
+            <button onclick="window.location.href='../src/login.html'" class="logout-button">Delete Account</button>
+            <button onclick="window.location.href='../src/updatepassword.html'" class="logout-button">Change Password</button>
             <button onclick="window.location.href='../src/login.html'" class="logout-button">Logout</button>
         </div>
     </div>
