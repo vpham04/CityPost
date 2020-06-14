@@ -7,18 +7,28 @@
 </head>
 
 <body>
-    <h1>Welcome!</h1>
-    <form action="login.php" method="post">
-        <input type="text" name="username" placeholder="username">
-        <input type="text" name="password" placeholder="password">
-        <br />
-        <input type="submit" value="Login">
-    </form>
-    <button onclick="window.location.href='../src/makeaccount.html';">
-        Sign up
-    </button>
+    <h1>CityPost</h1>
     <br />
-    <a href="../src/main.html">Go back</a>
+    <div id='login-box'>
+        <form action="login.php" method="post">
+            <label>Username: </label>
+            <input type="text" name="username" placeholder="username">
+            <br />
+            <label>Password: </label>
+            <input type="text" name="password" placeholder="password">
+            <br />
+            <input type="submit" value="Login">
+        </form>
+        <br />
+        <p>Don't have an account?</p>
+        <button onclick="window.location.href='../src/makeaccount.html';">
+            Sign up
+        </button>
+    </div>
+    <br />
+    <div style="text-align: center;">
+        <a href="../src/main.html">Go back</a>
+    </div>
     <br />
     <div id="contact">
         <h2>Contact information</h1>

@@ -14,12 +14,20 @@
                 margin: 0px;
                 padding: 0px;
             }
+
+            .back-button {
+                float: right;
+            }
         </style>
     </head>
     <body>
         <div class="header">
             <h1>Order History</h1>
+            <div class="back">
+                <button onclick="window.location.href='../src/customer.php'" class="back-button">go back</button>
+            </div>
         </div>
+
         <div class="result_table">
             <?php
                 include 'connect.php';
