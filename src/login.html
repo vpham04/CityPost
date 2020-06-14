@@ -83,15 +83,15 @@
             <button onclick="window.location.href='../src/main.html'" class="go-back-button">Go back</button>
         </div>
     </div>
-    <form class="credentials" action="login.php" method="post">
-        <input class="credentials-text" type="text" name="username" placeholder="username">
-        <input class="credentials-text" type="text" name="password" placeholder="password">
-        <br />
-        <input class="credentials-button" id="credential-button-login" type="submit" value="Login">
-        <button class="credentials-button" id="credential-button-signup" onclick="window.location.href='../src/makeaccount.html';">
-            Sign up
-        </button>
-    </form>
+    <div class="credentials">
+        <form action="login.php" method="post">
+            <input class="credentials-text" type="text" name="username" placeholder="username">
+            <input class="credentials-text" type="text" name="password" placeholder="password">
+            <br />
+            <input class="credentials-button" id="credential-button-login" type="submit" value="Login">
+            <input type="button" class="credentials-button" id="credential-button-signup" onclick="window.location.href='../src/makeaccount.html'" value="Sign up">
+        </form>
+    </div>
     <br/>
     <br />
     <div id="contact">
