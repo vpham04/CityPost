@@ -1,34 +1,33 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Welcome To CityPost</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1>CityPost</h1>
-    <br />
-    <div id='login-box'>
-        <form action="login.php" method="post">
-            <label>Username: </label>
-            <input type="text" name="username" placeholder="username">
+    <div class="header">
+        <h1>CityPost</h1>
+        <div class="go-back">
+            <button onclick="window.location.href='../src/main.html'" class="go-back-button">Go back</button>
+        </div>
+    </div>
+    <div>
+        <form class="credentials" action="login.php" method="post">
+            <label id="login-text">Username: </label>
+            <input class="credentials-text" type="text" name="username" placeholder="username">
+            <label id="login-text">Password: </label>
+            <input class="credentials-text" type="text" name="password" placeholder="password">
             <br />
-            <label>Password: </label>
-            <input type="text" name="password" placeholder="password">
-            <br />
-            <input type="submit" value="Login">
+            <input class="credentials-button" id="credential-button-login" type="submit" value="Login">
+            <br /> <br />
+            <p>Don't have an account?</p>
+            <button class="credentials-button" id="credential-button-signup" onclick="window.location.href='../src/makeaccount.php';">
+                Sign up
+            </button>
         </form>
-        <br />
-        <p>Don't have an account?</p>
-        <button onclick="window.location.href='../src/makeaccount.html';">
-            Sign up
-        </button>
     </div>
-    <br />
-    <div style="text-align: center;">
-        <a href="../src/main.html">Go back</a>
-    </div>
+    <br/>
     <br />
     <div id="contact">
         <h2>Contact information</h1>

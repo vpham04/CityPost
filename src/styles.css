@@ -1,8 +1,9 @@
 /* Makes it wrap all the way to the end*/
-html,
+
 body {
-  margin: 0;
-  padding: 0;
+  background-color: #8cd38c;
+  margin: 0px;
+  padding: 0px;
 }
 
 h1 {
@@ -14,22 +15,12 @@ h1 {
   margin: 0px;
 }
 
-body {
-  background-color: #8cd38c;
-  overflow-x: hidden;
-}
-
 #contact {
-  position: fixed;
+  position: absolute;
   text-align: center;
   width: 100%;
   bottom: 5%;
 }
-
-/* p {
-   margin: 60px 30px 30px 60px;
-}
-*/ 
 
 #username {
   font-size: 70%;
@@ -56,11 +47,72 @@ body {
   height: 90%;
 }
 
-#login-box {
-  position: relative;
-  margin: auto;
-  width: 30%;
-  border: 3px solid green;
-  padding: 10px;
+body {
+  overflow-x: hidden;
+}
+
+.credentials {
+  height: 200px;
+  width: 400px;
+  size: 200%;
+  border-color: 3px solid green;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -200px;
+  vertical-align: middle;
+}
+
+.header {
+  background-color: rgb(102, 102, 102);
+  padding: 40px 40px 40px 40px;
+  margin: 0px;
+}
+
+.go-back-button {
+  float: right;
+}
+
+.credentials {
   text-align: center;
+}
+
+.credentials-button {
+  border: 2px solid black;
+  border-radius: 4px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+}
+
+#credential-button-login {
+  background-color: green;
+}
+
+#credential-button-login:hover {
+  background-color: darkgreen;
+  color: white;
+}
+
+#credential-button-signup {
+  background-color: red;
+}
+
+#credential-button-signup:hover {
+  background-color: darkred;
+}
+
+.credentials-text {
+  height: 50px;
+  width: 300px;
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+#login-text {
+  font-size: 30px;
 }
