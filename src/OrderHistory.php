@@ -1,53 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <Title>Order History</Title>
-        <style>
-            .header {
-				background-color: rgb(75, 100, 135);
-            padding: 40px 40px 40px 40px;
-            margin: 0px;
-            }
 
-            body {
-                background-color: #8cd38c;
-                margin: 0px;
-                padding: 0px;
-            }
+<head>
+    <Title>Order History</Title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-            .back-button {
-                float: right;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="header">
-            <h1>Order History</h1>
-            <div class="back">
-                <button onclick="window.location.href='../src/customer.php'" class="back-button">go back</button>
-            </div>
+<body>
+    <div class="header">
+        <h1>Order History</h1>
+        <div class="back">
+            <button onclick="window.location.href='../src/customer.php'" class="go-back-button">Go Back</button>
         </div>
+    </div>
 
-        <div class="result_table">
-            <?php
-                include 'connect.php';
-                $conn = OpenCon();
-                echo "Connected Successfully<br>";      // Debug statement
-                // TODO: get current users cid
-                // TODO: query to find more information about packages. (ie. #packages, locations, etc)
-                $sql = "select oid
+    <div class="result_table">
+        <?php
+        include 'connect.php';
+        $conn = OpenCon();
+        echo "Connected Successfully<br>";      // Debug statement
+        // TODO: get current users cid
+        // TODO: query to find more information about packages. (ie. #packages, locations, etc)
+        $sql = "select oid
                 from OrderedParcel op, customer c
                 where op.cid = c.cid";
-                $result = $conn->query($sql);
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo "OID: " .$row["oid"]. "<br>";
-                    }
-                } else {
-                    echo "0 results";
-                }
-                CloseCon($conn);
-            ?>
-        </div>
-    </body>
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "OID: " . $row["oid"] . "<br>";
+            }
+        } else {
+            echo "0 results";
+        }
+        CloseCon($conn);
+        ?>
+    </div>
+</body>
+
 </html>

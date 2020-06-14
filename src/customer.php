@@ -7,21 +7,11 @@ session_start();
 
 <head>
     <Title>My Account</Title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        .header {
-            background-color: rgb(75, 100, 135);
-            padding: 40px 40px 40px 40px;
-            margin: 0px;
-        }
-
-        body {
-            background-color: #8cd38c;
-            margin: 0px;
-            padding: 0px;
-        }
-
-        .logout-button {
+        .account-button {
             float: right;
+            margin-left: 15px;
         }
 
         .customer-option-button {
@@ -55,9 +45,9 @@ session_start();
         ?>
         <!-- php for customer info -->
         <div class="account">
-            <button onclick="window.location.href='../src/login.html'" class="logout-button">Delete Account</button>
-            <button onclick="window.location.href='../src/updatepassword.html'" class="logout-button">Change Password</button>
-            <button onclick="window.location.href='../src/login.html'" class="logout-button">Logout</button>
+            <button onclick="window.location.href='../src/login.html'" class="account-button">Logout</button>
+            <button onclick="window.location.href='../src/updatepassword.html'" class="account-button">Change Password</button>
+            <button onclick="window.location.href='../src/login.html'" class="account-button">Delete Account</button>
         </div>
     </div>
 

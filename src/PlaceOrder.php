@@ -7,21 +7,10 @@ session_start();
 
 <head>
     <Title>Place An Order</Title>
-	<style>
-        .header {
-            background-color: rgb(75, 100, 135);
-            padding: 40px 40px 40px 40px;
-            margin: 0px;
-        }
-
-        body {
-            background-color: #8cd38c;
-            margin: 0px;
-            padding: 0px;
-        }
-
+    <link rel="stylesheet" href="styles.css">
+    <style>
         .customer-page-button {
-			background-color: blue;
+            background-color: blue;
             border: 2px solid black;
             border-radius: 0px;
             color: white;
@@ -31,7 +20,7 @@ session_start();
             font-size: 16px;
             transition-duration: 0.4s;
         }
- 
+
         .customer-page-button:hover {
             background-color: darkblue;
             color: white;
@@ -50,22 +39,22 @@ session_start();
 
     <form action="OrderHandler.php" method="post">
         <label for="Large">Large</label>
-		<input type="radio" name="Size" value="Large">
-		
-        <label for="Medium">Medium</label>
-		<input type="radio" name="Size" value="Medium">
-		
-        <label for="Small">Small</label>
-		<input type="radio" name="Size" value="Small"><br><br>
+        <input type="radio" name="Size" value="Large">
 
-		<label for="PickupAddress">Pickup Location</label>
-		<input type="text" name="PickupAddress" placeholder=""><br><br>
-		<label for="DropOffAddress">DropOffAddress</label>
-		<input type="text" name="DropOffAddress" placeholder=""><br><br>
+        <label for="Medium">Medium</label>
+        <input type="radio" name="Size" value="Medium">
+
+        <label for="Small">Small</label>
+        <input type="radio" name="Size" value="Small"><br><br>
+
+        <label for="PickupAddress">Pickup Location</label>
+        <input type="text" name="PickupAddress" placeholder=""><br><br>
+        <label for="DropOffAddress">DropOffAddress</label>
+        <input type="text" name="DropOffAddress" placeholder=""><br><br>
 
         <input type="submit" value="Place Order">
-	</form> 
-        <button onclick="window.location.href='../src/customer.php'" class="customer-page-button">Cancel Order</button>
+    </form>
+    <button onclick="window.location.href='../src/customer.php'" class="customer-page-button">Cancel Order</button>
 </body>
 
 </html>

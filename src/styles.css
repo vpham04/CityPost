@@ -7,13 +7,12 @@ body {
   overflow-x: hidden;
 }
 
-h1 {
+.company {
   text-align: center;
   color: white;
   background-color: rgb(75, 100, 135);
   font-size: 50px;
   padding: 40px 40px 40px 40px;
-
   margin: 0px;
 }
 
@@ -63,7 +62,7 @@ h1 {
 }
 
 .header {
-  background-color: rgb(102, 102, 102);
+  background-color: rgb(75, 100, 135);
   padding: 40px 40px 40px 40px;
   margin: 0px;
 }
