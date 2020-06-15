@@ -11,6 +11,9 @@ session_start();
     <style>
         td {
             padding-top: 10px;
+            border-bottom-style: solid;
+            border-bottom-color: black;
+            border-bottom-width: 2px;
         }
 
         #terminate-button {
