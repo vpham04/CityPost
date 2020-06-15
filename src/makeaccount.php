@@ -13,6 +13,7 @@ $sql = "INSERT INTO Accounts(Username, Password, LvlAccess, CID, SSN)
 VALUES ('$username', '$password', 1, NULL, NULL)";
 $result = $conn->query($sql);
 
+// TODO: maybe remove this as this isn't a dynamic query
 $max = "SELECT MAX(CID) as cid FROM Customer";
 $resultmax = $conn->query($max);
 $row = $resultmax->fetch_assoc();

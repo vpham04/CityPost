@@ -6,7 +6,6 @@ $conn = OpenCon();
 
 $username = $_POST['username'];
 $password = $_POST['password'];
-$printname;
 
 $sql = "SELECT Username, Password, LvlAccess FROM Accounts
 WHERE Username = '$username' AND Password = '$password'";
