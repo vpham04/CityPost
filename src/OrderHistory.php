@@ -16,18 +16,27 @@
 
     <div class="result_table">
         <?php
+        session_start();
+
         include 'connect.php';
         $conn = OpenCon();
         echo "Connected Successfully<br>";      // Debug statement
-        // TODO: get current users cid
         // TODO: query to find more information about packages. (ie. #packages, locations, etc)
-        $sql = "select oid
-                from OrderedParcel op, customer c
-                where op.cid = c.cid";
+        // Want to display: OID, location from, location to, ETA, #packages, Status 
+        // TODO: insert results into an html table
+
+        $sql = "select op.oid, od.ShippingAddress, oo.ReturnAddress
+                from OrderedParcel op, customer c, accounts a, OrderDest od, OrderOrig oo
+                where op.cid = c.cid
+                    and c.cid = a.cid
+                    and a.username = '".$_SESSION["username"]."'
+                    and op.oid = od.oid
+                    and op.oid = oo.oid";
+
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo "OID: " . $row["oid"] . "<br>";
+                echo "OID: " .$row["oid"]. " Order Dest: " .$row["ShippingAddress"]. "Return Address: " .$row["ReturnAddress"].  "<br>";
             }
         } else {
             echo "0 results";
