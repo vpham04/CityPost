@@ -11,7 +11,7 @@ $result = $conn->query($sql);
 
 if ($conn->query($sql) === TRUE) {
     echo "Record deleted successfully";
-    header("refresh:5;url=../src/fireEmployee.php");
+    header("refresh:3;url=../src/fireEmployee.php");
 } else {
     echo "Error deleting record: " . $conn->error;
 }
