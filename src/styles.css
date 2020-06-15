@@ -4,7 +4,6 @@ body {
   background-color: #8cd38c;
   margin: 0px;
   padding: 0px;
-  overflow-x: hidden;
 }
 
 .company {
@@ -17,10 +16,12 @@ body {
 }
 
 #contact {
-  position: absolute;
   text-align: center;
   width: 100%;
+<<<<<<< HEAD
   bottom: 0%;
+=======
+>>>>>>> b2049ef4faeeffded95a02caf5d71a4f203203b0
 }
 
 #username {
@@ -49,17 +50,17 @@ body {
 }
 
 .credentials {
-  height: 200px;
-  width: 400px;
   size: 200%;
-  border-color: 3px solid green;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -100px;
-  margin-left: -200px;
+  border: solid;
+  border-radius: 16px;
+  border-width: 3px;
+  border-color: green;
+  background-color: darkgreen;
+  margin: auto;
   vertical-align: middle;
   text-align: center;
+  min-height: 450px;
+  max-width: 350px;
 }
 
 .header {
@@ -108,10 +109,15 @@ body {
 }
 
 #login-text {
+  color: white;
   font-size: 30px;
 }
 
 .account-button {
   float: right;
   margin-left: 15px;
+}
+
+#login-box {
+  color:blue;
 }
