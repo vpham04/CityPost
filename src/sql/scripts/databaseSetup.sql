@@ -385,7 +385,7 @@ CREATE TABLE Accounts(
     SSN             integer,
     primary key (Username),
     foreign key (SSN) references Employee (SSN)
-        on delete no action,
+        on delete cascade,
     foreign key (CID) references Customer (CID)
         on delete cascade
     );
