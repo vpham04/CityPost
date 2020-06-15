@@ -8,6 +8,36 @@ session_start();
 <head>
     <title>Manager Page</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        td {
+            padding-top: 10px;
+        }
+
+        #terminate-button {
+            background-color: red;
+            border: 2px solid black;
+            border-radius: 4px;
+            color: white;
+            padding: 10px 32px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            transition-duration: 0.4s;
+        }
+
+        #termiante-button:hover {
+            background-color: darkred;
+            color: white;
+        }
+
+        #list_emp {
+            padding: 8px 30px;
+        }
+
+        #terminate {
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -61,24 +91,26 @@ session_start();
         echo "0 results";
     }
     ?>
-    <form action="../src/terminate.php" method="post">
-        <label>Terminate:</label>
+    <div id="terminate">
+        <form action="../src/terminate.php" method="post">
+            <label>Terminate:</label>
 
-        <?php
-        $employee = "SELECT SSN, Name FROM Employee";
-        $all_employee = $conn->query($employee);
-        echo "<select name='employee'>";
-        while ($emp_row = $all_employee->fetch_assoc()) {
-            unset($employeename, $employeessn);
-            $employeename = $emp_row['Name'];
-            $employeessn = $emp_row['SSN'];
-            echo '<option value="' . $employeessn . '">' . $employeename . "SSN:" . $employeessn . '</option>';
-        }
-        echo "</select>";
-        CloseCon($conn);
-        ?>
-        <input type="submit" value="Terminate Employee">
-    </form>
+            <?php
+            $employee = "SELECT SSN, Name FROM Employee";
+            $all_employee = $conn->query($employee);
+            echo "<select id='list_emp' name='employee'>";
+            while ($emp_row = $all_employee->fetch_assoc()) {
+                unset($employeename, $employeessn);
+                $employeename = $emp_row['Name'];
+                $employeessn = $emp_row['SSN'];
+                echo '<option value="' . $employeessn . '">' . $employeename . "SSN:" . $employeessn . '</option>';
+            }
+            echo "</select>";
+            CloseCon($conn);
+            ?>
+            <input type="submit" id="terminate-button" value="Terminate Employee">
+        </form>
+    </div>
 </body>
 
 </html>

@@ -1,4 +1,44 @@
 <?php
+session_start()
+?>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Schedule</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .border-class {
+            width: 35%;
+            font-size: 25px;
+            border-bottom-style: solid;
+            border-bottom-color: black;
+            border-bottom-width: 3px;
+        }
+
+        #title {
+            text-align: left;
+        }
+
+        .header {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Schedule</h1>
+        <div class="account">
+            <button onclick="window.location.href='<?php echo $_SESSION['returnpage']; ?>'" class="account-button">Go back</button>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<?php
 
 include 'connect.php';
 $conn = OpenCon();
@@ -13,10 +53,10 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     echo "<table>
         <tr>
-            <th class='border-class'>Name</th>
-            <th class='border-class'>Date</th>
-            <th class='border-class'>StartTime</th>
-            <th class='border-class'>EndTime</th>
+            <th id='title' class='border-class'>Name</th>
+            <th id='title' class='border-class'>Date</th>
+            <th id='title' class='border-class'>StartTime</th>
+            <th id='title' class='border-class'>EndTime</th>
         </tr>";
     while ($row = $result->fetch_assoc()) {
         echo
