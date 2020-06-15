@@ -32,6 +32,7 @@ session_start();
         }
 
         .customer-options {
+            padding: 10px 10px 10px;
             text-align: center;
         }
     </style>
