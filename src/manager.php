@@ -2,15 +2,29 @@
 session_start();
 ?>
 
-// TODO: Make welcome page like customer using saved session name
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Manager Page</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <!-- TODO: Make welcome page like customer using saved session name -->
+
+    <div class="header">
+        <h1>Manager Control Panel</h1>
+        <?php
+        $_SESSION['returnpage'] = '../src/manager.php';
+        echo "Welcome Manager " . $_SESSION["username"] . "<br/>";
+        ?>
+        <div class="account">
+            <button onclick="window.location.href='../src/login.html'" class="account-button">Logout</button>
+            <button onclick="window.location.href='../src/updatepassword.html'" class="account-button">Change Password</button>
+            <button onclick="window.location.href='../src/schedule.php'" class="account-button">See Schedule</button>
+        </div>
+    </div>
     <?php
 
     include 'connect.php';
@@ -63,7 +77,6 @@ session_start();
         echo "</select>";
         CloseCon($conn);
         ?>
-        </br>
         <input type="submit" value="Terminate Employee">
     </form>
 </body>

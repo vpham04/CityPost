@@ -41,6 +41,7 @@ session_start();
     <div class="header">
         <h1>My Account</h1>
         <?php
+        $_SESSION['returnpage'] = '../src/customer.php';
         echo "Hi " . $_SESSION["username"] . "<br/>";
         ?>
         <!-- php for customer info -->

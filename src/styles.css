@@ -113,3 +113,8 @@ body {
 #login-text {
   font-size: 30px;
 }
+
+.account-button {
+  float: right;
+  margin-left: 15px;
+}
