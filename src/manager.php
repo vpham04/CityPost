@@ -16,6 +16,7 @@ session_start();
     <div class="header">
         <h1>Manager Control Panel</h1>
         <?php
+        $_SESSION['returnpage'] = '../src/manager.php';
         echo "Welcome Manager " . $_SESSION["username"] . "<br/>";
         ?>
         <div class="account">
