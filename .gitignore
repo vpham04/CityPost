@@ -3,3 +3,5 @@ check-connection.php
 inputs.html
 query.php
 sum.php
+process-update.php
+update.php
