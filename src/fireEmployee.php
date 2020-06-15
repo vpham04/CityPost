@@ -1,4 +1,7 @@
 <?php
+session_start();
+// TODO: Make welcome page like customer using saved session name
+
 include 'connect.php';
 $conn = OpenCon();
 
@@ -33,7 +36,7 @@ if ($result->num_rows > 0) {
     echo "0 results";
 }
 ?>
-<form action="terminate.php" method="post">
+<form action="../src/terminate.php" method="post">
     <label>Terminate:</label>
 
     <?php
