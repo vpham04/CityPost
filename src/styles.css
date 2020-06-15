@@ -20,7 +20,7 @@ body {
   position: absolute;
   text-align: center;
   width: 100%;
-  bottom: 5%;
+  bottom: 0%;
 }
 
 #username {
@@ -59,6 +59,7 @@ body {
   margin-top: -100px;
   margin-left: -200px;
   vertical-align: middle;
+  text-align: center;
 }
 
 .header {
@@ -69,10 +70,6 @@ body {
 
 .go-back-button {
   float: right;
-}
-
-.credentials {
-  text-align: center;
 }
 
 .credentials-button {
