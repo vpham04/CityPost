@@ -44,7 +44,7 @@ include 'connect.php';
         $resultSSN = $conn->query($SSN);
         $row = $resultSSN->fetch_assoc();
         $SSN = $row['SSN'];
-        echo "Hello Driver SSN: ". $SSN;
+        echo "Hello Driver ".$_SESSION['username'];
 
         CloseCon($conn);
         ?>
