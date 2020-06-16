@@ -51,7 +51,7 @@ body {
   border-radius: 16px;
   border-width: 3px;
   border-color: green;
-  background-color: darkgreen;
+  background-color: rgb(75, 100, 135);
   margin: 90px auto 30px;
   vertical-align: middle;
   text-align: center;
@@ -115,5 +115,5 @@ body {
 }
 
 #login-box {
-  color:blue;
+  color: blue;
 }
