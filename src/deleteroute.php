@@ -77,7 +77,7 @@ if ($result->num_rows > 0) {
             <tr>
                 <th class='border-class'>RID</th>
                 <th class='border-class'>Manager that created</th>
-                <th class='border-class'>Distnace</th>
+                <th class='border-class'>Distance</th>
                 <th class='border-class'>Courier assigned</th>
             </tr>";
     while ($row = $result->fetch_assoc()) {
