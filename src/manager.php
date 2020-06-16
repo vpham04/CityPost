@@ -54,7 +54,7 @@ session_start();
     </div>
 
     <div class="customer-options">
-        <form action="../src/schedule.php" method="post">
+        <form method="post">
             <label for="date">Which week:</label>
             <select name="date" id="date">
                 <option value="2020-05-01">2020-05-01</option>
@@ -70,5 +70,18 @@ session_start();
         <button onclick="window.location.href='../src/routes.php'" class="customer-option-button">Set Route</button>
         <!-- TODO: -->
         <button onclick="window.location.href='../src/invoice.php'" class="customer-option-button">See spenders</button>
+        <form method="post">
+
+            <button onclick="window.location.href='../src/invoice.php'" class="customer-option-button">Customer Advertising</button>
+        </form>
     </div>
 </body>
+
+<?php
+if (isset($_POST['date'])) {
+    include 'schedule.php';
+    Schedule($_POST['date']);
+}
+?>
+
+</html>
