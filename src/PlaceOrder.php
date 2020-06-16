@@ -35,6 +35,9 @@ session_start();
         echo "Username: " . $_SESSION["username"] . "<br/>";
         ?>
         <!- -->
+        <div class="go-back-button">
+            <button onclick="window.location.href='<?php echo $_SESSION['returnpage']; ?>'" class="account-button">Go back</button>
+        </div>
     </div>
 
     <form action="OrderHandler.php" method="post">
@@ -54,7 +57,6 @@ session_start();
 
         <input type="submit" value="Place Order">
     </form>
-    <button onclick="window.location.href='../src/customer.php'" class="customer-page-button">Cancel Order</button>
 </body>
 
 </html>
