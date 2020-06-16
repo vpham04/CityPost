@@ -83,7 +83,7 @@ include 'connect.php';
             </tr>";
         while ($row = $result->fetch_assoc()) {
         echo
-                "<tr>
+            "<tr>
                 <td class='border-class'>" . $row["SSN"] . "</td>
                 <td class='border-class'>" . $row["Name"] . "</td>
                 <td class='border-class'>" . $row["Gender"] . "</td>
