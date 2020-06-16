@@ -24,7 +24,7 @@ session_start();
         $conn = OpenCon();
 
         $sql = "SELECT po.oid, od.ShippingAddress, oo.ReturnAddress, oon.Date as Date1, oe.Date as Date2, iv.Cost, os.Status
-                FROM PlacedOrder po, customer c, accounts a, OrderDest od, OrderOrig oo, OrderedOn oon, OrderETA oe, Invoice iv, OrderStatus os
+                FROM PlacedOrder po, Customer c, Accounts a, OrderDest od, OrderOrig oo, OrderedOn oon, OrderETA oe, Invoice iv, OrderStatus os
                 where po.cid = c.cid
                     and c.cid = a.cid
                     and a.username = '".$_SESSION["username"]."'
@@ -32,8 +32,7 @@ session_start();
                     and po.oid = oo.oid
                     and po.oid = oon.oid
                     and po.oid = oe.oid
-                    and po.oid = os.oid
-                    and po.oid = iv.oid";
+                    and po.oid = os.oid";
 
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
@@ -57,7 +56,7 @@ session_start();
                     <td class='border-class'>" .$row["Date2"]. "</td>
                     <td class='border-class'>" .$row["Cost"]. "</td>
                     <td class='border-class'>" .$row["Status"]. "</td>
-                    ";
+                    </tr>";
             }
         } else {
             echo "0 results";

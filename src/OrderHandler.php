@@ -45,6 +45,14 @@ $weekfromToday = date("Y-m-d", strtotime($today. ' + 7 days'));
 $orderETA = "INSERT into OrderETA(OID, Date) values ($maxOID,'$weekfromToday')";
 $resultETA = $conn->query($orderETA);
 
+$maxIID = 'SELECT max(IID) as id from Invoice';
+$result = $conn->query($maxIID);
+$row = $result->fetch_assoc();
+$IID = $row['id'] + 1;
+
+$invoice = "INSERT into Invoice(IID,Cost,CID,SSN,OID) values ($IID, null,$cid, 626343110,$maxOID)";
+$resultInvoice = $conn->query($invoice);
+
 if ($resultETA == TRUE &
 	$resultOD == TRUE & 
 	$resultOOg == TRUE &
