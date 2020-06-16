@@ -41,8 +41,6 @@ session_start();
 </head>
 
 <body>
-    <!-- TODO: Make welcome page like customer using saved session name -->
-
     <div class="header">
         <h1>Manager Control Panel</h1>
         <?php
@@ -53,16 +51,15 @@ session_start();
             <button onclick="window.location.href='../src/login.html'" class="account-button">Logout</button>
             <button onclick="window.location.href='../src/updatepassword.html'" class="account-button">Change Password</button>
         </div>
-
     </div>
-       <div class="customer-options">
+
+    <div class="customer-options">
         <button onclick="window.location.href='../src/schedule.php'" class="customer-option-button">View Schedule</button>
-        <!-- add php -->
         <button onclick="window.location.href='../src/employee.php'" class="customer-option-button">View Employees</button>
-
         <button onclick="window.location.href='../src/routes.php'" class="customer-option-button">Set Route</button>
-        <!-- TODO -->
+        <!-- TODO: -->
+        <button onclick="window.location.href='../src/invoice.php'" class="customer-option-button">See Invoices</button>
     </div>
-    <?php
+ </body>
 
    

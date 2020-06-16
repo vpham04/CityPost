@@ -11,7 +11,7 @@ session_start()
     <style>
         .border-class {
             width: 35%;
-            font-size: 25px;
+            font-size: 18px;
             border-bottom-style: solid;
             border-bottom-color: black;
             border-bottom-width: 3px;
