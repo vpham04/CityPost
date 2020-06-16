@@ -70,7 +70,7 @@ include 'connect.php';
     $sql = "SELECT * FROM Employee";
     $result = $conn->query($sql);
 
-    if ($result->num_row$s > 0) {
+    if ($result->num_rows > 0) {
         echo "<table>
             <tr>
                 <th class='border-class'>SSN</th>
@@ -81,7 +81,7 @@ include 'connect.php';
                 <th class='border-class'>PhoneNumber</th>
                 <th class='border-class'>HomeAddress</th>
             </tr>";
-    f    while ($row = $result->fetch_assoc()) {
+        while ($row = $result->fetch_assoc()) {
         echo
                 "<tr>
                 <td class='border-class'>" . $row["SSN"] . "</td>
