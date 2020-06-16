@@ -11,11 +11,15 @@ $row = $resultCID->fetch_assoc();
 $CID = $row['CID'];
 // debugs
 
+// this is not referenced by parcel
 // $placedOrder = "INSERT into PlacedOrder(OID,CID) values ($OID,$CID)";
 // $resultPO = $conn->query($placedOrder); 
 
+$orderedParcel = "INSERT into OrderedParcel(OID,CID) values ($OID,$CID)";
+$resultOP = $conn->query($orderedParcel); 
+
 echo "Successfully created order";
-header("refresh:2;url='../src/PlaceOrder.php'");
+header("refresh:1;url='../src/PlaceOrder.php'");
 
 Closecon($conn);
 ?>

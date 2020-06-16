@@ -28,18 +28,24 @@ include 'connect.php';
 		$row = $resultmax->fetch_assoc();
 		$PID = $row['id'] + 1;
 		echo $PID;
-		
+        
 	 	$length = $_POST['Length'];
         $width = $_POST['Width'];
 		$height = $_POST['Height'];
         $weight = $_POST['Weight'];
         $oid = $_SESSION['OID'];
-		
+        echo $oid;
+        
         $sql = 'INSERT into Parcel(PID, Length, Width, Height, Weight, OID, VID)
-        VALUES ($PID, '.$length.', '.$width.', '.$height.', '.$weight.' ,'.$oid.', NULL)';
-        $result = $conn->query($sql);
-         
-        $conn ->query($sql);
+        VALUES ('.$PID.', '.$length.', '.$width.', '.$height.', '.$weight.' ,'.$oid.', NULL)';
+        $result = $conn->query($sql) or die($conn->error);
+
+        // if ($result->num_rows > 0) {
+        //        echo "made";
+        // }
+        // else {
+        //     echo "not made";
+        // }
 
         closeCon($conn);
         header("refresh:1;url='../src/PlaceOrder.php'");

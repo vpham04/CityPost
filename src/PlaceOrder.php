@@ -66,7 +66,7 @@ include 'connect.php';
     <?php
     $conn = OpenCon();
 
-    echo "Your Order Number:  ".  $_SESSION['OID'] ."\n\n\n\n|";//placeholderlol
+    echo "Your Order Number:  ".  $_SESSION['OID'] ."\n\n\n\n|";
     
     $parcels = "SELECT PID, Length, Width, Height, Weight 
                 From Parcel P
@@ -91,7 +91,7 @@ include 'connect.php';
                     <td class='border-class'>" .$row["Width"]. "</td>
                     <td class='border-class'>" .$row["Height"]. "</td>
                     <td class='border-class'>" .$row["Weight"]. "</td>
-
+                </tr>
                     ";
         }
     } else {

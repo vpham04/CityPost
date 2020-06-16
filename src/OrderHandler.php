@@ -25,10 +25,11 @@ $resultOID = $conn->query($maxOID);
 $row = $resultOID->fetch_assoc();
 $maxOID = $row['id'] + 1;
 
-$orderedParcel = "INSERT into OrderedParcel(CID, OID) values ($cid,$maxOID)";
-$resultOP = $conn->query($orderedParcel);
 
-// add foreign key insertion
+// In createOrder this is inserted
+// $orderedParcel = "INSERT into OrderedParcel(CID, OID) values ($cid,$maxOID)";
+// $resultOP = $conn->query($orderedParcel);
+
 $placedOrder = "INSERT into PlacedOrder(OID,CID) values ($maxOID,$cid)";
 $resultPO = $conn->query($placedOrder); 
 

@@ -57,7 +57,7 @@ include 'connect.php';
         <button onclick="window.location.href='../src/OrderHistory.php'" class="customer-option-button">Order History</button>
         <!-- add php -->
         <!--$_SESSION['orderNum']-->
-        <button onclick="window.location.href='../src/PlaceOrder.php'" class="customer-option-button">Place Order</button>
+        <button onclick="window.location.href='../src/createOrder.php'" class="customer-option-button">Place Order</button>
         <!-- TODO: add intermediate php file before redirecting to PlaceOrder.php -->
         <?php
         $conn = OpenCon();
