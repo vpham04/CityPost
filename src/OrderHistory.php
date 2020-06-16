@@ -24,7 +24,7 @@ session_start();
         $conn = OpenCon();
 
         $sql = "SELECT po.oid, od.ShippingAddress, oo.ReturnAddress, oon.Date as Date1, oe.Date as Date2, iv.Cost, os.Status
-                FROM PlacedOrder po, customer c, accounts a, OrderDest od, OrderOrig oo, OrderedOn oon, OrderETA oe, Invoice iv, OrderStatus os
+                FROM PlacedOrder po, Customer c, Accounts a, OrderDest od, OrderOrig oo, OrderedOn oon, OrderETA oe, Invoice iv, OrderStatus os, OrderedParcel op
                 where po.cid = c.cid
                     and c.cid = a.cid
                     and a.username = '".$_SESSION["username"]."'
@@ -33,9 +33,11 @@ session_start();
                     and po.oid = oon.oid
                     and po.oid = oe.oid
                     and po.oid = os.oid
-                    and po.oid = iv.oid";
+                    and po.oid = iv.oid
+                    AND po.oid = op.oid
+                    AND po.cid = op.cid";
 
-        $result = $conn->query($sql);
+        $result = $conn->query($sql) or die($conn->error);
         if ($result->num_rows > 0) {
             echo "<table>
                 <tr>
