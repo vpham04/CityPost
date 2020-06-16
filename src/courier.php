@@ -59,16 +59,16 @@ session_start();
                 <option value="2020-05-28">2020-05-28</option>
             </select>
             <input type="submit" class="customer-option-button" value="View Weekly Schedule">
-            <!-- <button onclick="window.location.href='../src/schedule.php'" class="customer-option-button">View Schedule</button> -->
-            <!-- add php -->
-            <button onclick="window.location.href='../src/routes.php'" class="customer-option-button">View Routes</button>
-
-
-            <!-- TODO -->
-            <button onclick="window.location.href='../src/packages.php'" class="customer-option-button">View Packages</button>
-
-            <button onclick="window.location.href='../src/countorder.php'" class="customer-option-button">Number of Orders</button>
         </form>
+        <!-- <button onclick="window.location.href='../src/schedule.php'" class="customer-option-button">View Schedule</button> -->
+        <!-- add php -->
+        <button onclick="window.location.href='../src/routes.php'" class="customer-option-button">View Routes</button>
+
+
+        <!-- TODO -->
+        <button onclick="window.location.href='../src/packages.php'" class="customer-option-button">View Packages</button>
+
+        <button onclick="window.location.href='../src/countorder.php'" class="customer-option-button">Number of Orders</button>
     </div>
 </body>
 

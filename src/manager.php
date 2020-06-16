@@ -64,11 +64,11 @@ session_start();
                 <option value="2020-05-28">2020-05-28</option>
             </select>
             <input type="submit" class="customer-option-button" value="View Weekly Schedule">
-            <!-- <button onclick="window.location.href='../src/schedule.php'" class="customer-option-button">View Schedule</button> -->
-            <button onclick="window.location.href='../src/employee.php'" class="customer-option-button">View Employees</button>
-            <button onclick="window.location.href='../src/routes.php'" class="customer-option-button">Set Route</button>
-            <!-- TODO: -->
-            <button onclick="window.location.href='../src/invoice.php'" class="customer-option-button">See spenders</button>
         </form>
+        <!-- <button onclick="window.location.href='../src/schedule.php'" class="customer-option-button">View Schedule</button> -->
+        <button onclick="window.location.href='../src/employee.php'" class="customer-option-button">View Employees</button>
+        <button onclick="window.location.href='../src/routes.php'" class="customer-option-button">Set Route</button>
+        <!-- TODO: -->
+        <button onclick="window.location.href='../src/invoice.php'" class="customer-option-button">See spenders</button>
     </div>
 </body>
