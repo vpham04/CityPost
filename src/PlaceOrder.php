@@ -9,6 +9,9 @@ session_start();
     <Title>Place An Order</Title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        .header {
+            text-align: center;
+        }
         .customer-page-button {
             background-color: blue;
             border: 2px solid black;
@@ -24,21 +27,20 @@ session_start();
             background-color: darkblue;
             color: white;
         }
+        .Form {
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
     <div class="header">
         <h1>Place An Order</h1>
-        <?php
-        echo "Username: " . $_SESSION["username"] . "<br/>";
-        ?>
-        <!- -->
         <div class="go-back-button">
             <button onclick="window.location.href='<?php echo $_SESSION['returnpage']; ?>'" class="account-button">Go back</button>
         </div>
     </div>
-
+        <div class = "Form">
     <form action="OrderHandler.php" method="post">
         <label for="Large">Large</label>
         <input type="radio" name="Size" value="Large">
@@ -56,6 +58,7 @@ session_start();
 
         <input type="submit" value="Place Order">
     </form>
+    </div>
 </body>
 
 </html>
