@@ -15,31 +15,6 @@ session_start();
             border-bottom-color: black;
             border-bottom-width: 2px;
         }
-
-        #terminate-button {
-            background-color: red;
-            border: 2px solid black;
-            border-radius: 4px;
-            color: white;
-            padding: 10px 32px;
-            text-align: center;
-            display: inline-block;
-            font-size: 16px;
-            transition-duration: 0.4s;
-        }
-
-        #termiante-button:hover {
-            background-color: darkred;
-            color: white;
-        }
-
-        #list_emp {
-            padding: 8px 30px;
-        }
-
-        #terminate {
-            text-align: center;
-        }
         .customer-option-button {
             background-color: blue;
             border: 2px solid black;
@@ -85,7 +60,7 @@ session_start();
         <!-- add php -->
         <button onclick="window.location.href='../src/employee.php'" class="customer-option-button">View Employees</button>
 
-        <button onclick="window.location.href='../src/routes.php'" class="customer-option-button">Set Routes</button>
+        <button onclick="window.location.href='../src/routes.php'" class="customer-option-button">Set Route</button>
         <!-- TODO -->
     </div>
     <?php

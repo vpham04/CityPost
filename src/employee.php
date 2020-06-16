@@ -6,7 +6,7 @@ session_start()
 <html>
 
 <head>
-    <title>Employees Page</title>
+    <title>Employees</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         .border-class {
@@ -36,7 +36,7 @@ session_start()
             transition-duration: 0.4s;
         }
 
-        #termiante-button:hover {
+        #terminate-button:hover {
             background-color: darkred;
             color: white;
         }
@@ -47,7 +47,8 @@ session_start()
 
         #terminate {
             text-align: center;
-        }
+		}
+		
     </style>
 </head>
 
