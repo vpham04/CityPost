@@ -20,7 +20,6 @@ session_start();
             font-size: 16px;
             transition-duration: 0.4s;
         }
-
         .customer-page-button:hover {
             background-color: darkblue;
             color: white;
