@@ -70,5 +70,13 @@ session_start();
         <button onclick="window.location.href='../src/routes.php'" class="customer-option-button">Set Route</button>
         <!-- TODO: -->
         <button onclick="window.location.href='../src/invoice.php'" class="customer-option-button">See spenders</button>
+        <form action="../src/employeecontact.php" method="post">
+            <label for="date">Which contact:</label>
+            <input type="radio" id="phone" name="contact" value="Email">
+            <label for="male">Email</label>
+            <input type="radio" id="email" name="contact" value="PhoneNumber">
+            <label for="female">PhoneNumber</label><br>
+            <input type="submit" class="customer-option-button" value="Get employee contact info">
+        </form>
     </div>
 </body>
