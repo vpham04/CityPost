@@ -1,10 +1,10 @@
 <?php
 session_start();
+include 'connect.php';
 ?>
 
 <!DOCTYPE html>
 <html>
-
 <head>
     <Title>My Account</Title>
     <link rel="stylesheet" href="styles.css">
@@ -56,7 +56,22 @@ session_start();
     <div class="customer-options">
         <button onclick="window.location.href='../src/OrderHistory.php'" class="customer-option-button">Order History</button>
         <!-- add php -->
+        <!--$_SESSION['orderNum']-->
         <button onclick="window.location.href='../src/PlaceOrder.php'" class="customer-option-button">Place Order</button>
+        <!-- TODO: add intermediate php file before redirecting to PlaceOrder.php -->
+        <?php
+        $conn = OpenCon();
+        $max = 'SELECT max(OID) as id from Parcel';
+        $result = $conn->query($max);
+        $row = $result->fetch_assoc();
+        $OID = $row['id'];
+        //echo $OID;
+        $_SESSION['OID'] = $OID + 1;
+
+        //echo $_SESSION['OID'];
+        
+        CloseCon($conn);
+        ?>
         <!-- add php -->
     </div>
 </body>

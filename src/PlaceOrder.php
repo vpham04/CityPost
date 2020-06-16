@@ -1,5 +1,7 @@
 <?php
 session_start();
+include 'connect.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -27,10 +29,11 @@ session_start();
             background-color: darkblue;
             color: white;
         }
-        .Form {
-            text-align: center;
+        .order-form {
+            text-align: right;
         }
         .parcel-form {
+            text-align: left;
             padding: 10px 10px 10px
         }
     </style>
@@ -44,28 +47,72 @@ session_start();
         </div>
     </div>
 
-        <div class = "Form">
-    <form action="OrderHandler.php" method="post">
-           
-        <div class = "parcel-form">
-            <form action = "PlaceOrder.php" method = "post">
+    <div class = "parcel-form">
+            <form action = "addParcel.php" method = "post">
                 <label for="Length">Length</label>
                 <input type="text" name="Length"><br><br>
                 <label for="Width">Width</label>
                 <input type="text" name="Width"><br><br>
                 <label for="Height">Height</label>
                 <input type="text" name="Height"><br><br>
-                <label for="PickupAddress">Pickup Location</label>
-                <input type="text" name="PickupAddress" placeholder=""><br><br>
-                <label for="DropOffAddress">DropOffAddress</label>
-                <input type="text" name="DropOffAddress" placeholder=""><br><br>
-                <input type="submit" value="Add Parcel To Order">
+                <label for="Weight">Weight</label>
+                <input type="text" name="Weight"><br><br>
+                <input name = "addParcel" type="submit" value="Add Parcel To Order">
             </form>
-        </div>
-        
-        <input type="submit" value="Place Order">
-    </form>
     </div>
+    
+    <div class = "order-form">
+        <form action="customer.php" method="post">
+            <label for="PickupAddress">Pickup Location</label>
+            <input type="text" name="PickupAddress" placeholder="">
+            <label for="DropOffAddress">DropOffAddress</label>
+            <input type="text" name="DropOffAddress" placeholder=""><br><br>
+            <input type="submit" value="Place Order">
+
+        </form>
+    </div>
+
+    <div class= "Parcels">
+    <?php
+    $conn = OpenCon();
+
+    //echo $_SESSION['OID'];
+    
+    $parcels = "SELECT PID, Length, Width, Height, Weight 
+                From Parcel P
+                where " .$_SESSION['OID']." = P.OID";
+    $result = $conn->query($parcels);
+    
+    if ($result->num_rows > 0) {
+        echo 
+            "<table>
+            <tr>
+                <th class='border-class'>PID</th>
+                <th class='border-class'>Length</th>
+                <th class='border-class'>Width</th>
+                <th class='border-class'>Height</th>
+                <th class='border-class'>Weight</th>
+
+            </tr>";
+        while ($row = $result->fetch_assoc()) {
+            echo
+                "<tr>
+                    <td class='border-class'>" .$row["PID"]. "</td>
+                    <td class='border-class'>" .$row["Length"]. "</td>
+                    <td class='border-class'>" .$row["Width"]. "</td>
+                    <td class='border-class'>" .$row["Height"]. "</td>
+                    <td class='border-class'>" .$row["Weight"]. "</td>
+
+                    ";
+        }
+    } else {
+        echo "0 results";
+    }
+    
+    Closecon($conn);
+    ?>
+    </div>
+
 </body>
 
 </html>

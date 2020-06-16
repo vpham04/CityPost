@@ -175,7 +175,7 @@ CREATE TABLE Courier (
         on delete cascade
         on update cascade
 );
-               
+
 insert into Courier(SSN, DriverLicenseNumber) values (999999999, 9221270);
 insert into Courier(SSN, DriverLicenseNumber) values (626343111, 5678568);
 insert into Courier(SSN, DriverLicenseNumber) values (626343189, 6456737);
