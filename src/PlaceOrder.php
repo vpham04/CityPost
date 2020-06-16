@@ -11,6 +11,13 @@ include 'connect.php';
     <Title>Place An Order</Title>
     <link rel="stylesheet" href="styles.css">
     <style>
+         .border-class {
+            width: 35%;
+            font-size: 18px;
+            border-bottom-style: solid;
+            border-bottom-color: black;
+            border-bottom-width: 3px;
+        }
         .header {
             text-align: center;
         }
@@ -97,13 +104,12 @@ include 'connect.php';
     } else {
         echo "0 results";
     }
-    
     Closecon($conn);
     ?>
     </div>
 
-    <div class = "order-form">
-        <form action="customer.php" method="post">
+ <div class = "order-form">
+        <form action="OrderHandler.php" method="post">
             <label for="PickupAddress">Pickup Location</label>
             <input type="text" name="PickupAddress" placeholder="">
             <label for="DropOffAddress">DropOffAddress</label>
@@ -112,6 +118,8 @@ include 'connect.php';
 
         </form>
     </div>
+  
 </body>
+ 
 
 </html>

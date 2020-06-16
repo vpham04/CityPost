@@ -10,7 +10,6 @@ if (isset($_POST['Size'])) {
 	$selected_radio = "No Button Selected";
 }
 
-$selected_radio = $_POST['Size'];
 $PickupAddress = $_POST['PickupAddress'];
 $DropOffAddress = $_POST['DropOffAddress'];
 
@@ -19,11 +18,7 @@ $resultcid = $conn->query($cid);
 $row = $resultcid->fetch_assoc();
 $cid = $row['CID'];
 
-$maxOID = "SELECT MAX(OID) as id FROM OrderedParcel";
-
-$resultOID = $conn->query($maxOID);
-$row = $resultOID->fetch_assoc();
-$maxOID = $row['id'] + 1;
+$maxOID = $_SESSION['OID'];
 
 
 // In createOrder this is inserted
@@ -54,14 +49,13 @@ if ($resultETA == TRUE &
 	$resultOD == TRUE & 
 	$resultOOg == TRUE &
 	$resultOOn == TRUE &
-	$resultOP == TRUE &
 	$resultOS == TRUE &
 	$resultPO == TRUE) {
     echo "Succesfully Placed Order";
-    header("refresh:1;url=" . $_SESSION['returnpage']);
+	header("refresh:1;url='../src/customer.php'");
 } else {
 	echo "error";
-	header("refeesh:1;url=" . $_SESSION['returnpage']);
+	header("refresh:1;url='../src/PlaceOrder.php'");
 }
 CloseCon($conn);
 ?>
