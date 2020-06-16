@@ -157,7 +157,7 @@ CREATE TABLE ScheduleTime(
 );
 
 insert into ScheduleTime(SSN, StartTime, EndTime)
-values (626343111, "07:00:00", "15:00:00");
+values (626343182, "07:00:00", "15:00:00");
 insert into ScheduleTime(SSN, StartTime, EndTime)
 values (626343187, "09:30:00", "17:30:00");
 insert into ScheduleTime(SSN, StartTime, EndTime)
@@ -285,10 +285,10 @@ CREATE TABLE ScheduledEmployee(
 );
 
 insert into ScheduledEmployee(ScheduleID, SSN) values (1, 626343182);    
+insert into ScheduledEmployee(ScheduleID, SSN) values (1, 999999999);    
 insert into ScheduledEmployee(ScheduleID, SSN) values (2, 626343182);    
 insert into ScheduledEmployee(ScheduleID, SSN) values (3, 626343182);    
-insert into ScheduledEmployee(ScheduleID, SSN) values (4, 626343182);    
-insert into ScheduledEmployee(ScheduleID, SSN) values (5, 626343182);     
+insert into ScheduledEmployee(ScheduleID, SSN) values (4, 626343182);     
 
 CREATE TABLE AssignedRoute (
     RID			integer, 

@@ -15,6 +15,7 @@ session_start();
             border-bottom-color: black;
             border-bottom-width: 2px;
         }
+
         .customer-option-button {
             background-color: blue;
             border: 2px solid black;
@@ -36,7 +37,6 @@ session_start();
             padding: 10px 10px 10px;
             text-align: center;
         }
-
     </style>
 </head>
 
@@ -54,12 +54,21 @@ session_start();
     </div>
 
     <div class="customer-options">
-        <button onclick="window.location.href='../src/schedule.php'" class="customer-option-button">View Schedule</button>
-        <button onclick="window.location.href='../src/employee.php'" class="customer-option-button">View Employees</button>
-        <button onclick="window.location.href='../src/routes.php'" class="customer-option-button">Set Route</button>
-        <!-- TODO: -->
-        <button onclick="window.location.href='../src/invoice.php'" class="customer-option-button">See spenders</button>
+        <form action="../src/schedule.php" method="post">
+            <label for="date">Which week:</label>
+            <select name="date" id="date">
+                <option value="2020-05-01">2020-05-01</option>
+                <option value="2020-05-08">2020-05-08</option>
+                <option value="2020-05-15">2020-05-15</option>
+                <option value="2020-05-22">2020-05-22</option>
+                <option value="2020-05-28">2020-05-28</option>
+            </select>
+            <input type="submit" class="customer-option-button" value="View Weekly Schedule">
+            <!-- <button onclick="window.location.href='../src/schedule.php'" class="customer-option-button">View Schedule</button> -->
+            <button onclick="window.location.href='../src/employee.php'" class="customer-option-button">View Employees</button>
+            <button onclick="window.location.href='../src/routes.php'" class="customer-option-button">Set Route</button>
+            <!-- TODO: -->
+            <button onclick="window.location.href='../src/invoice.php'" class="customer-option-button">See spenders</button>
+        </form>
     </div>
- </body>
-
-   
+</body>
