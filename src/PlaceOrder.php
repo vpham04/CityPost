@@ -61,28 +61,17 @@ include 'connect.php';
             </form>
     </div>
     
-    <div class = "order-form">
-        <form action="customer.php" method="post">
-            <label for="PickupAddress">Pickup Location</label>
-            <input type="text" name="PickupAddress" placeholder="">
-            <label for="DropOffAddress">DropOffAddress</label>
-            <input type="text" name="DropOffAddress" placeholder=""><br><br>
-            <input type="submit" value="Place Order">
-
-        </form>
-    </div>
 
     <div class= "Parcels">
     <?php
     $conn = OpenCon();
 
-    //echo $_SESSION['OID'];
+    echo "Your Order Number:  ".  $_SESSION['OID'] ."\n\n\n\n|";//placeholderlol
     
     $parcels = "SELECT PID, Length, Width, Height, Weight 
                 From Parcel P
                 where " .$_SESSION['OID']." = P.OID";
     $result = $conn->query($parcels);
-    
     if ($result->num_rows > 0) {
         echo 
             "<table>
@@ -113,6 +102,16 @@ include 'connect.php';
     ?>
     </div>
 
+    <div class = "order-form">
+        <form action="customer.php" method="post">
+            <label for="PickupAddress">Pickup Location</label>
+            <input type="text" name="PickupAddress" placeholder="">
+            <label for="DropOffAddress">DropOffAddress</label>
+            <input type="text" name="DropOffAddress" placeholder=""><br><br>
+            <input type="submit" value="Place Order">
+
+        </form>
+    </div>
 </body>
 
 </html>
