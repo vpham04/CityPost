@@ -98,7 +98,7 @@ include 'connect.php';
         echo "0 results";
     }
     ?>
-    <div id="terminate">
+    <!-- <div id="terminate">
         <form action="../src/terminate.php" method="post">
             <label>Terminate:</label>
 
@@ -117,4 +117,4 @@ include 'connect.php';
             ?>
             <input type="submit" id="terminate-button" value="Terminate Employee">
         </form>
-    </div>
+    </div> -->
