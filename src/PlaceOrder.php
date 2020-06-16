@@ -73,7 +73,7 @@ include 'connect.php';
     <?php
     $conn = OpenCon();
 
-    echo "Your Order Number:  ".  $_SESSION['OID'] ."\n\n\n\n|";
+    echo "Your Order Number:  ".  $_SESSION['OID'] ."\n\n\n\n";
     
     $parcels = "SELECT PID, Length, Width, Height, Weight 
                 From Parcel P
