@@ -68,6 +68,7 @@ session_start();
         <!-- <button onclick="window.location.href='../src/schedule.php'" class="customer-option-button">View Schedule</button> -->
         <button onclick="window.location.href='../src/employee.php'" class="customer-option-button">View Employees</button>
         <button onclick="window.location.href='../src/routes.php'" class="customer-option-button">Set Route</button>
+        <button onclick="window.location.href='../src/deleteroute.php'" class="customer-option-button">Delete Route</button>
         <!-- TODO: -->
         <button onclick="window.location.href='../src/invoice.php'" class="customer-option-button">See spenders</button>
         <form action="../src/employeecontact.php" method="post">
