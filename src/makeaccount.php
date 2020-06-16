@@ -15,10 +15,6 @@ $resultmax = $conn->query($max);
 $row = $resultmax->fetch_assoc();
 $cid = $row['cid'] + 1;
 
-$sql = "INSERT INTO Accounts(Username, Password, LvlAccess, CID, SSN)
-VALUES ('$username', '$password', 1, NULL, NULL)";
-$result = $conn->query($sql);
-
 $sql1 = "INSERT INTO Customer(CID, Name, PhoneNumber)
 VALUES ($cid, '$name', $phonenumber)";
 $result1 = $conn->query($sql1);
