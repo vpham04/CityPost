@@ -9,6 +9,9 @@ session_start();
     <Title>Place An Order</Title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        .header {
+            text-align: center;
+        }
         .customer-page-button {
             background-color: blue;
             border: 2px solid black;
@@ -20,10 +23,15 @@ session_start();
             font-size: 16px;
             transition-duration: 0.4s;
         }
-
         .customer-page-button:hover {
             background-color: darkblue;
             color: white;
+        }
+        .Form {
+            text-align: center;
+        }
+        .parcel-form {
+            padding: 10px 10px 10px
         }
     </style>
 </head>
@@ -31,32 +39,33 @@ session_start();
 <body>
     <div class="header">
         <h1>Place An Order</h1>
-        <?php
-        echo "Username: " . $_SESSION["username"] . "<br/>";
-        ?>
-        <!- -->
         <div class="go-back-button">
             <button onclick="window.location.href='<?php echo $_SESSION['returnpage']; ?>'" class="account-button">Go back</button>
         </div>
     </div>
 
+        <div class = "Form">
     <form action="OrderHandler.php" method="post">
-        <label for="Large">Large</label>
-        <input type="radio" name="Size" value="Large">
-
-        <label for="Medium">Medium</label>
-        <input type="radio" name="Size" value="Medium">
-
-        <label for="Small">Small</label>
-        <input type="radio" name="Size" value="Small"><br><br>
-
-        <label for="PickupAddress">Pickup Location</label>
-        <input type="text" name="PickupAddress" placeholder=""><br><br>
-        <label for="DropOffAddress">DropOffAddress</label>
-        <input type="text" name="DropOffAddress" placeholder=""><br><br>
-
+           
+        <div class = "parcel-form">
+            <form action = "PlaceOrder.php" method = "post">
+                <label for="Length">Length</label>
+                <input type="text" name="Length"><br><br>
+                <label for="Width">Width</label>
+                <input type="text" name="Width"><br><br>
+                <label for="Height">Height</label>
+                <input type="text" name="Height"><br><br>
+                <label for="PickupAddress">Pickup Location</label>
+                <input type="text" name="PickupAddress" placeholder=""><br><br>
+                <label for="DropOffAddress">DropOffAddress</label>
+                <input type="text" name="DropOffAddress" placeholder=""><br><br>
+                <input type="submit" value="Add Parcel To Order">
+            </form>
+        </div>
+        
         <input type="submit" value="Place Order">
     </form>
+    </div>
 </body>
 
 </html>
