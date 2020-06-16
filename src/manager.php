@@ -58,7 +58,7 @@ session_start();
         <button onclick="window.location.href='../src/employee.php'" class="customer-option-button">View Employees</button>
         <button onclick="window.location.href='../src/routes.php'" class="customer-option-button">Set Route</button>
         <!-- TODO: -->
-        <button onclick="window.location.href='../src/invoice.php'" class="customer-option-button">See Invoices</button>
+        <button onclick="window.location.href='../src/invoice.php'" class="customer-option-button">See spenders</button>
     </div>
  </body>
 
