@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+// TODO: Move this courier so it prints "Orders to fulfill: ____"
+
 include 'connect.php';
 $conn = OpenCon();
 

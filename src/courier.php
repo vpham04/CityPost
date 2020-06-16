@@ -49,9 +49,10 @@ session_start();
     </div>
 
     <div class="customer-options">
-        <form action="../src/schedule.php" method="post">
+        <form method="post">
             <label for="date">Which week:</label>
             <select name="date" id="date">
+                <option value="clear">Clear</option>
                 <option value="2020-05-01">2020-05-01</option>
                 <option value="2020-05-08">2020-05-08</option>
                 <option value="2020-05-15">2020-05-15</option>
@@ -71,5 +72,12 @@ session_start();
         <button onclick="window.location.href='../src/countorder.php'" class="customer-option-button">Number of Orders</button>
     </div>
 </body>
+
+<?php
+if (isset($_POST['date'])) {
+    include 'schedule.php';
+    Schedule($_POST['date']);
+}
+?>
 
 </html>
