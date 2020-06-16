@@ -34,10 +34,10 @@ CREATE TABLE PlacedOrder (
 );
 
 insert into PlacedOrder(OID,CID) values (1,1);
-insert into PlacedOrder(OID,CID) values (2,2);
-insert into PlacedOrder(OID,CID) values (3,3);
-insert into PlacedOrder(OID,CID) values (4,4);
-insert into PlacedOrder(OID,CID) values (5,5);
+insert into PlacedOrder(OID,CID) values (2,1);
+insert into PlacedOrder(OID,CID) values (3,2);
+insert into PlacedOrder(OID,CID) values (4,3);
+insert into PlacedOrder(OID,CID) values (5,4);
 
 CREATE TABLE OrderStatus(
     OID	        integer,
@@ -229,16 +229,18 @@ CREATE TABLE Invoice(
     Cost	real,
     CID		integer,
     SSN		integer not null,
+    OID     integer not null,
     primary key (IID),
     foreign key (CID) references Customer(CID)
         on update cascade,
-    foreign key (SSN) references ManagedOffice(SSN)
+    foreign key (SSN) references ManagedOffice(SSN),
+    foreign key (OID) references PlacedOrder(OID)
 );
-insert into Invoice(IID, Cost, CID, SSN) values (1, 50.39, 1, 226343184);
-insert into Invoice(IID, Cost, CID, SSN) values (2, 100.00, 1, 226343184);
-insert into Invoice(IID, Cost, CID, SSN) values (3, 70, 1, 226343184);
-insert into Invoice(IID, Cost, CID, SSN) values (4, 30, 1, 226343184);
-insert into Invoice(IID, Cost, CID, SSN) values (5, 22.99, 1, 226343184);
+insert into Invoice(IID, Cost, CID, SSN, OID) values (1, 50.39, 1, 226343184, 1);
+insert into Invoice(IID, Cost, CID, SSN, OID) values (2, 100.00, 1, 226343184, 2);
+insert into Invoice(IID, Cost, CID, SSN, OID) values (3, 70, 2, 226343184, 3);
+insert into Invoice(IID, Cost, CID, SSN, OID) values (4, 30, 3, 226343184, 4);
+insert into Invoice(IID, Cost, CID, SSN, OID) values (5, 22.99, 4, 226343184, 5);
                
 CREATE TABLE Warehouse(
     WID		integer,
