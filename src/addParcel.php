@@ -35,6 +35,19 @@ include 'connect.php';
         $weight = $_POST['Weight'];
         $oid = $_SESSION['OID'];
         echo $oid;
+
+        if ($length == false) {
+            $length = 30;
+        } 
+        if ($width == false) {
+            $width = 40;
+        }
+        if ($height == false) {
+            $height = 50;
+        }
+        if ($weight == false) {
+            $weight = 60;
+        }
         
         $sql = 'INSERT into Parcel(PID, Length, Width, Height, Weight, OID, VID)
         VALUES ('.$PID.', '.$length.', '.$width.', '.$height.', '.$weight.' ,'.$oid.', NULL)';
