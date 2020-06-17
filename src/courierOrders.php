@@ -1,5 +1,4 @@
 <?php
-session_start()
 ?>
 
 <!DOCTYPE html>
@@ -16,28 +15,15 @@ session_start()
             border-bottom-color: black;
             border-bottom-width: 3px;
         }
-        .header {
-            text-align: center;
-        }
     </style>
 </head>
-
-<body>
-    <div class="header">
-        <h1>Orders</h1>
-        <div class="account">
-            <button onclick="window.location.href='<?php echo $_SESSION['returnpage']; ?>'" class="account-button">Go back</button>
-        </div>
-
-
-    </div>
-</body>
 
 </html>
 
 <?php
+function Orders() {
+    
 
-include 'connect.php';
 $conn = OpenCon();
 
     $sql = "SELECT * FROM OrderStatus";
@@ -62,3 +48,4 @@ $conn = OpenCon();
     }
 
 CloseCon($conn);
+}

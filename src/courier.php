@@ -37,7 +37,7 @@ session_start();
             <!-- <button onclick="window.location.href='../src/routes.php'" class="customer-option-button">View Routes</button> -->
             <!-- TODO -->
             <form method="post">
-                <input name="package" type="submit" class="customer-option-button" value="View Packages">
+                <input name="orders" type="submit" class="customer-option-button" value="View Orders">
             </form>
             <!-- <button onclick="window.location.href='../src/packages.php'" class="customer-option-button">View Packages</button> -->
 
@@ -74,9 +74,9 @@ if (isset($_POST['route'])) {
     include 'routes.php';
     Route();
 }
-if (isset($_POST['package'])) {
-    include 'packages.php';
-    Package();
+if (isset($_POST['orders'])) {
+    include 'courierOrders.php';
+    Orders();
 }
 if (isset($_POST['numorder'])) {
     include 'countorder.php';
