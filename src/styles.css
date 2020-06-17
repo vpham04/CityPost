@@ -117,3 +117,10 @@ body {
 #login-box {
   color: blue;
 }
+
+.border-class {
+  width: 35%;
+  border-bottom-style: solid;
+  border-bottom-color: black;
+  border-bottom-width: 3px;
+}

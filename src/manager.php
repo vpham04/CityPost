@@ -74,7 +74,7 @@ session_start();
         <button onclick="window.location.href='../src/deleteroute.php'" class="customer-option-button">Delete Route</button>
         <!-- TODO: -->
         <button onclick="window.location.href='../src/invoice.php'" class="customer-option-button">See spenders</button>
-        <form action="../src/employeecontact.php" method="post">
+        <form method="post">
             <label for="date">Which contact:</label>
             <input type="radio" id="phone" name="contact" value="Email">
             <label for="male">Email</label>
@@ -93,6 +93,10 @@ if (isset($_POST['employee'])) {
 if (isset($_POST['date'])) {
     include 'schedule.php';
     Schedule();
+}
+if (isset($_POST['contact'])) {
+    include 'employeecontact.php';
+    empContact();
 }
 ?>
 
