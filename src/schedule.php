@@ -6,11 +6,11 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         .border-class {
-            width: 35%;
             font-size: 25px;
-            border-bottom-style: solid;
-            border-bottom-color: black;
-            border-bottom-width: 3px;
+        }
+
+        #schedule {
+            text-align: center;
         }
     </style>
 </head>
@@ -31,7 +31,7 @@ function Schedule()
         exit;
     } else {
 
-        echo "<h1>Schedule</h1>";
+        echo "<h1 id='schedule'>Schedule</h1>";
 
         $sql = "SELECT Name, s.Date, st.StartTime, st.EndTime
         FROM Employee e
@@ -43,20 +43,20 @@ function Schedule()
 
         if ($result->num_rows > 0) {
             echo "<table>
-        <tr>
-            <th id='title' class='border-class'>Name</th>
-            <th id='title' class='border-class'>Date</th>
-            <th id='title' class='border-class'>StartTime</th>
-            <th id='title' class='border-class'>EndTime</th>
-        </tr>";
+                <tr>
+                    <th id='title' class='border-class'>Name</th>
+                    <th id='title' class='border-class'>Date</th>
+                    <th id='title' class='border-class'>StartTime</th>
+                    <th id='title' class='border-class'>EndTime</th>
+                </tr>";
             while ($row = $result->fetch_assoc()) {
                 echo
                     "<tr>
-            <td class='border-class'>" . $row["Name"] . "</td>
-            <td class='border-class'>" . $row["Date"] . "</td>
-            <td class='border-class'>" . $row["StartTime"] . "</td>
-            <td class='border-class'>" . $row["EndTime"] . "</td>
-        </tr>";
+                        <td class='border-class'>" . $row["Name"] . "</td>
+                        <td class='border-class'>" . $row["Date"] . "</td>
+                        <td class='border-class'>" . $row["StartTime"] . "</td>
+                        <td class='border-class'>" . $row["EndTime"] . "</td>
+                    </tr>";
             }
             echo "</table>";
         } else {
@@ -65,3 +65,4 @@ function Schedule()
         CloseCon($conn);
     }
 }
+?>

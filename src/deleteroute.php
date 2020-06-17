@@ -1,5 +1,5 @@
 <?php
-session_start()
+include 'connect.php';
 ?>
 
 <!DOCTYPE html>
@@ -10,19 +10,7 @@ session_start()
     <link rel="stylesheet" href="styles.css">
     <style>
         .border-class {
-            width: 35%;
             font-size: 18px;
-            border-bottom-style: solid;
-            border-bottom-color: black;
-            border-bottom-width: 3px;
-        }
-
-        #title {
-            text-align: left;
-        }
-
-        .header {
-            text-align: center;
         }
 
         #delete-button {
@@ -53,45 +41,40 @@ session_start()
 </head>
 
 <body>
-    <div class="header">
-        <h1>Routes</h1>
-        <?php echo "Delete a route Manager " . $_SESSION["username"] . "<br />"; ?>
-        <div class="account">
-            <button onclick="window.location.href='../src/manager.php'" class="account-button">Go back</button>
-        </div>
-    </div>
 </body>
 
 </html>
 
 <?php
+function deleteRoute()
+{
+    $conn = OpenCon();
+    $sql = "SELECT ar.RID as RID, sr.SSN as MSSN, Distance, ar.SSN as CSSN FROM AssignedRoute ar, SetsRoute sr
+    WHERE ar.RID = sr.RID";
+    $result = $conn->query($sql);
 
-include 'connect.php';
-$conn = OpenCon();
-$sql = "SELECT ar.RID as RID, sr.SSN as MSSN, Distance, ar.SSN as CSSN FROM AssignedRoute ar, SetsRoute sr
-WHERE ar.RID = sr.RID";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    echo "<table>
+    if ($result->num_rows > 0) {
+        echo "<table>
             <tr>
                 <th class='border-class'>RID</th>
                 <th class='border-class'>Manager that created</th>
                 <th class='border-class'>Distance</th>
                 <th class='border-class'>Courier assigned</th>
             </tr>";
-    while ($row = $result->fetch_assoc()) {
-        echo
-            "<tr>
+        while ($row = $result->fetch_assoc()) {
+            echo
+                "<tr>
                 <td class='border-class'>" . $row["RID"] . "</td>
                 <td class='border-class'>" . $row["MSSN"] . "</td>
                 <td class='border-class'>" . $row["Distance"] . "</td>
                 <td class='border-class'>" . $row["CSSN"] . "</td>
             </tr>";
+        }
+        echo "</table>";
+    } else {
+        echo "0 results";
     }
-    echo "</table>";
-} else {
-    echo "0 results";
+    CloseCon($conn);
 }
 ?>
 <div id="delete">
@@ -99,6 +82,7 @@ if ($result->num_rows > 0) {
         <label>Delete:</label>
 
         <?php
+        $conn = OpenCon();
         $route = "SELECT RID FROM AssignedRoute";
         $all_route = $conn->query($route);
         echo "<select id='list_emp' name='route'>";
