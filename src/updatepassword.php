@@ -69,8 +69,8 @@ session_start();
         where Username = '$username'";
 
         if ($conn->query($sql) == TRUE) {
-            echo "Password changed";
-            header("refresh:1;url=" . $_SESSION['returnpage']);
+            // echo "Password changed";
+            header('Location: ../src/confirmation.php');
         } else {
             echo "Error: " . $sql . "<br />" . $conn->error;
         }
