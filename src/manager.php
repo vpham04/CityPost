@@ -110,30 +110,37 @@ session_start();
 
 <?php
 if (isset($_POST['employee'])) {
+    $_SESSION['routeset'] = false;
     include 'employee.php';
     Employee();
 }
 if (isset($_POST['date'])) {
+    $_SESSION['routeset'] = false;
     include 'schedule.php';
     Schedule();
 }
 if (isset($_POST['contact'])) {
+    $_SESSION['routeset'] = false;
     include 'employeecontact.php';
     empContact();
 }
 if (isset($_POST['route'])) {
+    $_SESSION['routeset'] = false;
     include 'deleteroute.php';
     deleteRoute();
 }
 if (isset($_POST['profit'])) {
+    $_SESSION['routeset'] = false;
     include 'invoice.php';
     Invoice();
 }
 if (isset($_POST['employeeAll'])) {
+    $_SESSION['routeset'] = false;
     include 'schedule.php';
     ScheduleAll();
 }
-if (isset($_POST['setroute'])) {
+if (isset($_POST['setroute']) || $_SESSION['routeset'] == true) {
+    $_SESSION['routeset'] = true;
     include 'setRoute.php';
     SetRoute();
 }
