@@ -8,6 +8,15 @@ session_start();
 <head>
     <Title>Order History</Title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+    .border-class {
+            width: 35%;
+            font-size: 18px;
+            border-bottom-style: solid;
+            border-bottom-color: black;
+            border-bottom-width: 3px;
+        }
+    </style>
 </head>
 
 <body>
