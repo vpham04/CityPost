@@ -68,13 +68,17 @@ session_start();
         </form>
         <!-- <button onclick="window.location.href='../src/schedule.php'" class="customer-option-button">View Schedule</button> -->
         <form method="post">
-            <input name="employee" id="employee" type="submit" class="customer-option-button"  value="View Employees">
+            <input name="employee" type="submit" class="customer-option-button"  value="View Employees">
         </form>
         <button onclick="window.location.href='../src/setRoute.php'" class="customer-option-button">Set Route</button>
         <button onclick="window.location.href='../src/deleteroute.php'" class="customer-option-button">Delete Route</button>
         <!-- TODO: -->
+        <form method="post">
+            <input name="route" type="submit" class="customer-option-button" value="Delete Route">
+
+        </form>
         <button onclick="window.location.href='../src/invoice.php'" class="customer-option-button">See spenders</button>
-        <form action="../src/employeecontact.php" method="post">
+        <form method="post">
             <label for="date">Which contact:</label>
             <input type="radio" id="phone" name="contact" value="Email">
             <label for="male">Email</label>
@@ -93,6 +97,14 @@ if (isset($_POST['employee'])) {
 if (isset($_POST['date'])) {
     include 'schedule.php';
     Schedule();
+}
+if (isset($_POST['contact'])) {
+    include 'employeecontact.php';
+    empContact();
+}
+if (isset($_POST['route'])) {
+    include 'deleteroute.php';
+    deleteRoute();
 }
 ?>
 

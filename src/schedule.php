@@ -6,11 +6,7 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         .border-class {
-            width: 35%;
             font-size: 25px;
-            border-bottom-style: solid;
-            border-bottom-color: black;
-            border-bottom-width: 3px;
         }
 
         #schedule {
