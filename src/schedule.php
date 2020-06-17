@@ -65,4 +65,45 @@ function Schedule()
     CloseCon($conn);
     // }
 }
+function ScheduleAll() {
+    include 'connect.php';
+    $conn = OpenCon();
+
+    $date = $_POST['employeeAll'];
+    // if ($date == "clear") {
+    //     exit;
+    // } else {
+
+    echo "<h1 id='schedule'>Schedule</h1>";
+
+    $sql = "SELECT e.SSN, e.Name
+            from Employee e
+            where NOT EXISTS (
+                select ScheduleID
+                from Schedule
+                EXCEPT
+                (select sc.ScheduleID
+                from ScheduledEmployee sc
+                where e.SSN = sc.SSN))";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        echo "<table>
+                <tr>
+                    <th id='title' class='border-class'>SSN</th>
+                    <th id='title' class='border-class'>Name</th>
+                </tr>";
+        while ($row = $result->fetch_assoc()) {
+            echo
+                "<tr>
+                    <td class='border=class'>" . $row["SSN"] . "</td>
+                    <td class='border-class'>" . $row["Name"] . "</td>
+                </tr>";
+        }
+        echo "</table>";
+    } else {
+        echo "No one scheduled for every week";
+    }
+    CloseCon($conn);
+}
 ?>
