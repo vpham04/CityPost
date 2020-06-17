@@ -53,11 +53,18 @@ $_SESSION['routeset'] = false;
                 <label for="date">Which week:</label>
                 <select name="date" id="date">
                     <!-- <option value="clear">Clear</option> -->
-                    <option value="2020-05-01">2020-05-01</option>
-                    <option value="2020-05-08">2020-05-08</option>
-                    <option value="2020-05-15">2020-05-15</option>
-                    <option value="2020-05-22">2020-05-22</option>
-                    <option value="2020-05-28">2020-05-28</option>
+                    <?php
+                    include_once 'connect.php';
+                    $conn = OpenCon();
+                    $sql = "SELECT Date from Schedule";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<option value='" . $row['Date'] . "'>" . $row['Date'] . "</option>";
+                        }
+                    }
+                    CloseCon($conn);
+                    ?>
                 </select>
                 <input type="submit" class="customer-option-button" value="View Weekly Schedule">
             </form>

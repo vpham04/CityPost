@@ -63,7 +63,7 @@ function Schedule()
 }
 function ScheduleAll()
 {
-    include 'connect.php';
+    include_once 'connect.php';
     $conn = OpenCon();
 
     $date = $_POST['employeeAll'];

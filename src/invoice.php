@@ -1,7 +1,7 @@
 <?php
 function Invoice()
 {
-    include 'connect.php';
+    include_once 'connect.php';
     $conn = OpenCon();
 
     echo "<h1 class='title'>How much a customer spent</h1>";

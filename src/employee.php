@@ -19,7 +19,7 @@
 <?php
 function Employee()
 {
-    include 'connect.php';
+    include_once 'connect.php';
     $conn = OpenCon();
 
     echo "<h1 class='title'>Employees</h1>";

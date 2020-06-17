@@ -15,7 +15,7 @@
     <?php
     function empContact()
     {
-        include 'connect.php';
+        include_once 'connect.php';
         $conn = OpenCon();
         echo "<h1 class='title'>Employee Contact</h1>";
         if (empty($_POST['contact'])) {
