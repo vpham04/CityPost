@@ -26,14 +26,21 @@ $result = $conn->query($sql);
 if ($result == true & $result1 == true) {
     echo "New account created successfully";
     $conn->commit();
+    header("refresh:2;url='../src/makeaccount.html'");
 } else if ($result == false & $result1 == false) {
     echo "Failed making an account";
     $conn->rollback();
+    header("refresh:2;url='../src/makeaccount.html'");
 } else if ($result1 == false) {
     echo "CID already exist";
     $conn->rollback();
+    header("refresh:2;url='../src/makeaccount.html'");
 } else {
     echo "Please choose another username";
     $conn->rollback();
-}
+header("refresh:2;url='../src/makeaccount.html'");
+} 
+header("refresh:2;url='../src/login.html'");
+
+
 CloseCon($conn);
