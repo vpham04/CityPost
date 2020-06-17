@@ -67,7 +67,9 @@ session_start();
             <input type="submit" class="customer-option-button" value="View Weekly Schedule">
         </form>
         <!-- <button onclick="window.location.href='../src/schedule.php'" class="customer-option-button">View Schedule</button> -->
-        <button onclick="window.location.href='../src/employee.php'" class="customer-option-button">View Employees</button>
+        <form method="post">
+            <input name="employee" id="employee" type="submit" class="customer-option-button"  value="View Employees">
+        </form>
         <button onclick="window.location.href='../src/routes.php'" class="customer-option-button">Set Route</button>
         <button onclick="window.location.href='../src/deleteroute.php'" class="customer-option-button">Delete Route</button>
         <!-- TODO: -->
@@ -84,9 +86,13 @@ session_start();
 </body>
 
 <?php
+if (isset($_POST['employee'])) {
+    include 'employee.php';
+    Employee();
+}
 if (isset($_POST['date'])) {
     include 'schedule.php';
-    Schedule($_POST['date']);
+    Schedule();
 }
 ?>
 
