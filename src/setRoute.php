@@ -44,7 +44,15 @@ include 'connect.php';
         CloseCon($conn);
         ?>
     </div>
-
+    <div class = "parcel-form">
+            <form action = "addRoute.php" method = "post">
+                <label for="Distance">Distance</label>
+                <input type="text" name="Distance"><br><br>
+                <label for="SSN">Employee SSN:</label>
+                <input type="SSN" name="SSN"><br><br>
+                <input name = "addParcel" type="submit" value="Set Route for Employee">
+            </form>
+    </div>
     <div class = "routes-table">
     <?php
         $conn = OpenCon();
