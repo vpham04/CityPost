@@ -43,6 +43,7 @@ include 'connect.php';
             text-align: left;
             padding: 10px 10px 10px
         }
+
     </style>
 </head>
 
