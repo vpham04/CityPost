@@ -41,9 +41,6 @@ include 'connect.php';
 </head>
 
 <body>
-</body>
-
-</html>
 
 <?php
 function deleteRoute()
@@ -74,14 +71,10 @@ function deleteRoute()
     } else {
         echo "0 results";
     }
-    CloseCon($conn);
-}
-?>
-<div id="delete">
-    <form action="../src/droproute.php" method="post">
-        <label>Delete:</label>
+    echo "<div id='delete'>";
+    echo "<form action='../src/droproute.php' method='post'>";
+        echo "<label>Delete:</label>";
 
-        <?php
         $conn = OpenCon();
         $route = "SELECT RID FROM AssignedRoute";
         $all_route = $conn->query($route);
@@ -93,7 +86,11 @@ function deleteRoute()
         }
         echo "</select>";
         CloseCon($conn);
-        ?>
-        <input type="submit" id="delete-button" value="Delete route">
-    </form>
-</div>
+
+        echo "<input type='submit' id='delete-button' value='Delete route'>";
+    echo "</form>";
+echo "</div>";
+}
+?>
+</body>
+</html>
