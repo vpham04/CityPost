@@ -27,14 +27,14 @@ include 'connect.php';
 		$resultmax = $conn->query($max);
 		$row = $resultmax->fetch_assoc();
 		$PID = $row['id'] + 1;
-		echo $PID;
+		// echo $PID;
         
 	 	$length = $_POST['Length'];
         $width = $_POST['Width'];
 		$height = $_POST['Height'];
         $weight = $_POST['Weight'];
         $oid = $_SESSION['OID'];
-        echo $oid;
+        // echo $oid;
 
         if ($length == false) {
             $length = 30;
