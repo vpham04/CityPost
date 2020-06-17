@@ -59,7 +59,7 @@ session_start();
                     <td class='border-class'>" .$row["Date2"]. "</td>
                     <td class='border-class'>" .$row["Cost"]. "</td>
                     <td class='border-class'>" .$row["Status"]. "</td>
-                    ";
+                    </tr>";
             }
         } else {
             echo "0 results";
