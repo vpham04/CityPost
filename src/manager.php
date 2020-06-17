@@ -73,9 +73,10 @@ session_start();
         <button onclick="window.location.href='../src/routes.php'" class="customer-option-button">Set Route</button>
         <form method="post">
             <input name="route" type="submit" class="customer-option-button" value="Delete Route">
-
         </form>
-        <button onclick="window.location.href='../src/invoice.php'" class="customer-option-button">See spenders</button>
+        <form method="post">
+            <input name="profit" type="submit" class="customer-option-button" value="See spender">
+        </form>
         <form method="post">
             <label for="date">Which contact:</label>
             <input type="radio" id="phone" name="contact" value="Email">
@@ -103,6 +104,10 @@ if (isset($_POST['contact'])) {
 if (isset($_POST['route'])) {
     include 'deleteroute.php';
     deleteRoute();
+}
+if (isset($_POST['profit'])) {
+    include 'invoice.php';
+    Invoice();
 }
 ?>
 
