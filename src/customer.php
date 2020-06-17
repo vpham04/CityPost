@@ -67,7 +67,7 @@ include 'connect.php';
         $OID = $row['id'];
         //echo $OID;
         $_SESSION['OID'] = $OID + 1;
-
+        $_SESSION['COST'] = 0;
         //echo $_SESSION['OID'];
         
         CloseCon($conn);

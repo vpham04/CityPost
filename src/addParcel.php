@@ -52,7 +52,7 @@ include 'connect.php';
         $sql = 'INSERT into Parcel(PID, Length, Width, Height, Weight, OID, VID)
         VALUES ('.$PID.', '.$length.', '.$width.', '.$height.', '.$weight.' ,'.$oid.', NULL)';
         $result = $conn->query($sql) or die($conn->error);
-
+        $_SESSION['COST'] = $_SESSION['COST'] + ($length + $width + $height) * $weight;    
         // if ($result->num_rows > 0) {
         //        echo "made";
         // }

@@ -50,7 +50,9 @@ $result = $conn->query($maxIID);
 $row = $result->fetch_assoc();
 $IID = $row['id'] + 1;
 
-$invoice = "INSERT into Invoice(IID,Cost,CID,SSN,OID) values ($IID, null,$cid, 626343110,$maxOID)";
+
+$cost = $_SESSION['COST'];
+$invoice = "INSERT into Invoice(IID,Cost,CID,SSN,OID) values ($IID, $cost,$cid, 626343110,$maxOID)";
 $resultInvoice = $conn->query($invoice);
 
 if ($resultETA == TRUE &
@@ -58,7 +60,8 @@ if ($resultETA == TRUE &
 	$resultOOg == TRUE &
 	$resultOOn == TRUE &
 	$resultOS == TRUE &
-	$resultPO == TRUE) {
+	$resultPO == TRUE &
+	$resultInvoice == TRUE) {
     echo "Succesfully Placed Order";
 	header("refresh:1;url='../src/customer.php'");
 } else {
