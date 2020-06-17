@@ -65,18 +65,6 @@ session_start();
     </div>
 
     <div class="customer-options">
-        <form method="post">
-            <label for="date">Which week:</label>
-            <select name="date" id="date">
-                <option value="clear">Clear</option>
-                <option value="2020-05-01">2020-05-01</option>
-                <option value="2020-05-08">2020-05-08</option>
-                <option value="2020-05-15">2020-05-15</option>
-                <option value="2020-05-22">2020-05-22</option>
-                <option value="2020-05-28">2020-05-28</option>
-            </select>
-            <input type="submit" class="customer-option-button" value="View Weekly Schedule">
-        </form>
         <!-- <button onclick="window.location.href='../src/schedule.php'" class="customer-option-button">View Schedule</button> -->
         <div class="button-container">
             <form method="post">
@@ -91,6 +79,20 @@ session_start();
                 <input name="profit" type="submit" class="customer-option-button" value="See spender">
             </form>
         </div>
+        <br/>
+        <form method="post">
+            <label for="date">Which week:</label>
+            <select name="date" id="date">
+                <!-- <option value="clear">Clear</option> -->
+                <option value="2020-05-01">2020-05-01</option>
+                <option value="2020-05-08">2020-05-08</option>
+                <option value="2020-05-15">2020-05-15</option>
+                <option value="2020-05-22">2020-05-22</option>
+                <option value="2020-05-28">2020-05-28</option>
+            </select>
+            <input type="submit" class="customer-option-button" value="View Weekly Schedule">
+        </form>
+        <br/>
         <form method="post">
             <label for="date">Which contact:</label>
             <input type="radio" id="phone" name="contact" value="Email">
