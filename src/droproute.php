@@ -11,8 +11,9 @@ $result = $conn->query($sql);
 
 if ($conn->query($sql) === TRUE) {
     echo "Route deleted successfully";
-    header("refresh:3;url=../src/droproute.php");
+    header("refresh:3;url=../src/manager.php");
 } else {
     echo "Error deleting route: " . $conn->error;
 }
 CloseCon($conn);
+?>

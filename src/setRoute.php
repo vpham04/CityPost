@@ -49,7 +49,20 @@ include 'connect.php';
                 <label for="Distance">Distance</label>
                 <input type="text" name="Distance"><br><br>
                 <label for="SSN">Employee SSN:</label>
-                <input type="SSN" name="SSN"><br><br>
+                <select type="SSN" name="SSN">
+                    <?php
+                    $conn = OpenCon();
+                    $ESSN = "SELECT SSN from Courier";
+                    $result = $conn->query($ESSN);
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<option value='" .$row[SSN]. "'>" .$row[SSN]. "</option>";
+                        }
+                    }
+                    CloseCon($conn);
+                    ?>
+                </select>    
+                <br><br>
                 <input name = "addParcel" type="submit" value="Set Route for Employee">
             </form>
     </div>
