@@ -18,8 +18,7 @@ $CID = $row['CID'];
 $orderedParcel = "INSERT into OrderedParcel(OID,CID) values ($OID,$CID)";
 $resultOP = $conn->query($orderedParcel); 
 
-echo "Successfully created order";
-header("refresh:1;url='../src/PlaceOrder.php'");
+header("refresh:0;url='../src/PlaceOrder.php'");
 
 Closecon($conn);
 ?>
