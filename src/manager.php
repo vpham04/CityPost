@@ -37,6 +37,17 @@ session_start();
             padding: 10px 10px 10px;
             text-align: center;
         }
+        
+        .button-container form,
+        .button-container form div {
+            display: inline-block;
+        }
+
+        .button-container button {
+            display: inline;
+            vertical-align: middle;
+        }
+
     </style>
 </head>
 
@@ -49,7 +60,7 @@ session_start();
         ?>
         <div class="account">
             <button onclick="window.location.href='../src/login.html'" class="account-button">Logout</button>
-            <button onclick="window.location.href='../src/updatepassword.html'" class="account-button">Change Password</button>
+            <button onclick="window.location.href='../src/updatepassword.php'" class="account-button">Change Password</button>
         </div>
     </div>
 
@@ -67,17 +78,19 @@ session_start();
             <input type="submit" class="customer-option-button" value="View Weekly Schedule">
         </form>
         <!-- <button onclick="window.location.href='../src/schedule.php'" class="customer-option-button">View Schedule</button> -->
-        <form method="post">
-            <input name="employee" type="submit" class="customer-option-button"  value="View Employees">
-        </form>
-        <button onclick="window.location.href='../src/setRoute.php'" class="customer-option-button">Set Route</button>
-        <!-- TODO: -->
-        <form method="post">
-            <input name="route" type="submit" class="customer-option-button" value="Delete Route">
-        </form>
-        <form method="post">
-            <input name="profit" type="submit" class="customer-option-button" value="See spender">
-        </form>
+        <div class="button-container">
+            <form method="post">
+                <input name="employee" type="submit" class="customer-option-button"  value="View Employees">
+            </form>
+            <button onclick="window.location.href='../src/setRoute.php'" class="customer-option-button">Set Route</button>
+            <!-- TODO: -->
+            <form method="post">
+                <input name="route" type="submit" class="customer-option-button" value="Delete Route">
+            </form>
+            <form method="post">
+                <input name="profit" type="submit" class="customer-option-button" value="See spender">
+            </form>
+        </div>
         <form method="post">
             <label for="date">Which contact:</label>
             <input type="radio" id="phone" name="contact" value="Email">
