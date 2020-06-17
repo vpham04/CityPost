@@ -48,8 +48,7 @@ include 'connect.php';
         <!-- php for customer info -->
         <div class="account">
             <button onclick="window.location.href='../src/login.html'" class="account-button">Logout</button>
-            <button onclick="window.location.href='../src/updatepassword.html'" class="account-button">Change Password</button>
-            <button onclick="window.location.href='../src/login.html'" class="account-button">Delete Account</button>
+            <button onclick="window.location.href='../src/updatepassword.php'" class="account-button">Change Password</button>
         </div>
     </div>
 
