@@ -5,36 +5,12 @@ include 'connect.php';
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <Title>My Account</Title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        .account-button {
-            float: right;
-            margin-left: 15px;
-        }
 
-        .customer-option-button {
-            background-color: blue;
-            border: 2px solid black;
-            border-radius: 4px;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            display: inline-block;
-            font-size: 16px;
-            transition-duration: 0.4s;
-        }
-
-        .customer-option-button:hover {
-            background-color: darkblue;
-            color: white;
-        }
-
-        .customer-options {
-            padding: 10px 10px 10px;
-            text-align: center;
-        }
     </style>
 </head>
 
@@ -53,10 +29,18 @@ include 'connect.php';
     </div>
 
     <div class="customer-options">
-        <button onclick="window.location.href='../src/OrderHistory.php'" class="customer-option-button">Order History</button>
-        <!-- add php -->
-        <!--$_SESSION['orderNum']-->
-        <button onclick="window.location.href='../src/createOrder.php'" class="customer-option-button">Place Order</button>
+        <div class="button-container">
+            <form method="post">
+                <input name="history" type="submit" class="customer-option-button" value="Order History">
+            </form>
+            <!-- <button onclick="window.location.href='../src/OrderHistory.php'" class="customer-option-button">Order History</button> -->
+            <!-- add php -->
+            <!--$_SESSION['orderNum']-->
+            <!-- <form method="post">
+            <input name="create" type="submit" class="customer-option-button" value="Place Order">
+        </form> -->
+            <button onclick="window.location.href='../src/createOrder.php'" class="customer-option-button">Place Order</button>
+        </div>
         <!-- TODO: add intermediate php file before redirecting to PlaceOrder.php -->
         <?php
         $conn = OpenCon();
@@ -68,7 +52,7 @@ include 'connect.php';
         $_SESSION['OID'] = $OID + 1;
         $_SESSION['COST'] = 0;
         //echo $_SESSION['OID'];
-        
+
         CloseCon($conn);
         ?>
         <!-- add php -->
@@ -76,3 +60,14 @@ include 'connect.php';
 </body>
 
 </html>
+
+<?php
+if (isset($_POST['history'])) {
+    include 'OrderHistory.php';
+    History();
+}
+// if (isset($_POST['create'])) {
+//     include 'createOrder.php';
+//     Create();
+// }
+?>

@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -9,34 +5,31 @@ session_start();
     <Title>Order History</Title>
     <link rel="stylesheet" href="styles.css">
     <style>
-    .border-class {
-            width: 35%;
+        .border-class {
             font-size: 18px;
-            border-bottom-style: solid;
-            border-bottom-color: black;
-            border-bottom-width: 3px;
         }
     </style>
 </head>
 
 <body>
-    <div class="header">
+    <!-- <div class="header">
         <h1>Order History</h1>
         <div class="back">
             <button onclick="window.location.href='../src/customer.php'" class="go-back-button">Go Back</button>
         </div>
-    </div>
+    </div> -->
 
     <div class="result_table">
         <?php
-        include 'connect.php';
-        $conn = OpenCon();
+        function History()
+        {
+            $conn = OpenCon();
 
-        $sql = "SELECT po.oid, od.ShippingAddress, oo.ReturnAddress, oon.Date as Date1, oe.Date as Date2, iv.Cost, os.Status
+            $sql = "SELECT po.oid, od.ShippingAddress, oo.ReturnAddress, oon.Date as Date1, oe.Date as Date2, iv.Cost, os.Status
                 FROM PlacedOrder po, Customer c, Accounts a, OrderDest od, OrderOrig oo, OrderedOn oon, OrderETA oe, Invoice iv, OrderStatus os, OrderedParcel op
                 where po.cid = c.cid
                     and c.cid = a.cid
-                    and a.username = '".$_SESSION["username"]."'
+                    and a.username = '" . $_SESSION["username"] . "'
                     and po.oid = od.oid
                     and po.oid = oo.oid
                     and po.oid = oon.oid
@@ -46,9 +39,9 @@ session_start();
                     AND po.oid = op.oid
                     AND po.cid = op.cid";
 
-        $result = $conn->query($sql) or die($conn->error);
-        if ($result->num_rows > 0) {
-            echo "<table>
+            $result = $conn->query($sql) or die($conn->error);
+            if ($result->num_rows > 0) {
+                echo "<table>
                 <tr>
                     <th class='border-class'>OrderID</th>
                     <th class='border-class'>Destination</th>
@@ -58,22 +51,23 @@ session_start();
                     <th class='border-class'>Price</th>
                     <th class='border-class'>Status</th>
                 </tr>";
-            while ($row = $result->fetch_assoc()) {
-                echo
-                    "<tr>
-                    <td class='border-class'>" .$row["oid"]. "</td>
-                    <td class='border-class'>" .$row["ShippingAddress"]. "</td>
-                    <td class='border-class'>" .$row["ReturnAddress"]. "</td>
-                    <td class='border-class'>" .$row["Date1"]. "</td>
-                    <td class='border-class'>" .$row["Date2"]. "</td>
-                    <td class='border-class'>" .$row["Cost"]. "</td>
-                    <td class='border-class'>" .$row["Status"]. "</td>
+                while ($row = $result->fetch_assoc()) {
+                    echo
+                        "<tr>
+                    <td class='border-class'>" . $row["oid"] . "</td>
+                    <td class='border-class'>" . $row["ShippingAddress"] . "</td>
+                    <td class='border-class'>" . $row["ReturnAddress"] . "</td>
+                    <td class='border-class'>" . $row["Date1"] . "</td>
+                    <td class='border-class'>" . $row["Date2"] . "</td>
+                    <td class='border-class'>" . $row["Cost"] . "</td>
+                    <td class='border-class'>" . $row["Status"] . "</td>
                     </tr>";
+                }
+            } else {
+                echo "0 results";
             }
-        } else {
-            echo "0 results";
+            CloseCon($conn);
         }
-        CloseCon($conn);
         ?>
     </div>
 </body>

@@ -15,38 +15,6 @@ session_start();
             border-bottom-color: black;
             border-bottom-width: 2px;
         }
-
-        .customer-option-button {
-            background-color: blue;
-            border: 2px solid black;
-            border-radius: 4px;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            display: inline-block;
-            font-size: 16px;
-            transition-duration: 0.4s;
-        }
-
-        .customer-option-button:hover {
-            background-color: darkblue;
-            color: white;
-        }
-
-        .customer-options {
-            padding: 10px 10px 10px;
-            text-align: center;
-        }
-
-        .button-container form,
-        .button-container form div {
-            display: inline-block;
-        }
-
-        .button-container button {
-            display: inline;
-            vertical-align: middle;
-        }
     </style>
 </head>
 
