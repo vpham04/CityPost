@@ -2,7 +2,7 @@
 function numOrder()
 {
 
-    include 'connect.php';
+    include_once 'connect.php';
     $conn = OpenCon();
 
     $sql = "SELECT COUNT(Distinct OID) as NUM

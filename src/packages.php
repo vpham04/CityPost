@@ -37,7 +37,7 @@
 <?php
 function Package()
 {
-    include 'connect.php';
+    include_once 'connect.php';
     $conn = OpenCon();
 
     CloseCon($conn);
