@@ -288,7 +288,8 @@ insert into ScheduledEmployee(ScheduleID, SSN) values (1, 626343182);
 insert into ScheduledEmployee(ScheduleID, SSN) values (1, 999999999);    
 insert into ScheduledEmployee(ScheduleID, SSN) values (2, 626343182);    
 insert into ScheduledEmployee(ScheduleID, SSN) values (3, 626343182);    
-insert into ScheduledEmployee(ScheduleID, SSN) values (4, 626343182);     
+insert into ScheduledEmployee(ScheduleID, SSN) values (4, 626343182); 
+insert into ScheduledEmployee(ScheduleID, SSN) values (5, 626343182);     
 
 CREATE TABLE AssignedRoute (
     RID			integer, 
