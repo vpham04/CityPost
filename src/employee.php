@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <h1
 </body>
 
 </html>
@@ -21,6 +22,8 @@ function Employee()
 {
     include 'connect.php';
     $conn = OpenCon();
+
+    echo "<h1 class='title'>Employees</h1>";
 
     $sql = "SELECT * FROM Employee";
     $result = $conn->query($sql) or die($conn->error);

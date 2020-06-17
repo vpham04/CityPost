@@ -1,7 +1,3 @@
-<?php
-session_start()
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -17,30 +13,32 @@ session_start()
             border-bottom-width: 3px;
         }
 
-        #title {
+        /* #title {
             text-align: left;
         }
 
         .header {
             text-align: center;
-        }
+        } */
     </style>
 </head>
 
 <body>
-    <div class="header">
+    <!-- <div class="header">
         <h1>Package</h1>
         <div class="account">
             <button onclick="window.location.href='<?php echo $_SESSION['returnpage']; ?>'" class="account-button">Go back</button>
         </div>
-    </div>
+    </div> -->
 </body>
 
 </html>
 
 <?php
+function Package()
+{
+    include 'connect.php';
+    $conn = OpenCon();
 
-include 'connect.php';
-$conn = OpenCon();
-
-CloseCon($conn);
+    CloseCon($conn);
+}

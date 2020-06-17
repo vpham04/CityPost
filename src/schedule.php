@@ -8,10 +8,6 @@
         .border-class {
             font-size: 25px;
         }
-
-        #schedule {
-            text-align: center;
-        }
     </style>
 </head>
 
@@ -31,7 +27,7 @@ function Schedule()
     //     exit;
     // } else {
 
-    echo "<h1 id='schedule'>Schedule</h1>";
+    echo "<h1 class='title'>Schedule</h1>";
 
     $sql = "SELECT Name, s.Date, st.StartTime, st.EndTime
         FROM Employee e

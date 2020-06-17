@@ -17,6 +17,7 @@
     {
         include 'connect.php';
         $conn = OpenCon();
+        echo "<h1 class='title'>Employee Contact</h1>";
         if (empty($_POST['contact'])) {
             echo "No option Selected";
             header("refresh:1;url='../src/manager.php'");

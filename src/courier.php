@@ -9,28 +9,7 @@ session_start();
     <Title>Courier Page</Title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        .customer-option-button {
 
-            background-color: blue;
-            border: 2px solid black;
-            border-radius: 4px;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            display: inline-block;
-            font-size: 16px;
-            transition-duration: 0.4s;
-        }
-
-        .customer-option-button:hover {
-            background-color: darkblue;
-            color: white;
-        }
-
-        .customer-options {
-            padding: 10px 10px 10px;
-            text-align: center;
-        }
     </style>
 </head>
 
@@ -49,36 +28,56 @@ session_start();
     </div>
 
     <div class="customer-options">
-        <!-- <button onclick="window.location.href='../src/schedule.php'" class="customer-option-button">View Schedule</button> -->
-        <!-- add php -->
-        <button onclick="window.location.href='../src/routes.php'" class="customer-option-button">View Routes</button>
+        <div class="button-container">
+            <!-- <button onclick="window.location.href='../src/schedule.php'" class="customer-option-button">View Schedule</button> -->
+            <!-- add php -->
+            <form method="post">
+                <input name="route" type="submit" class="customer-option-button" value="View Routes">
+            </form>
+            <!-- <button onclick="window.location.href='../src/routes.php'" class="customer-option-button">View Routes</button> -->
+            <!-- TODO -->
+            <form method="post">
+                <input name="package" type="submit" class="customer-option-button" value="View Packages">
+            </form>
+            <!-- <button onclick="window.location.href='../src/packages.php'" class="customer-option-button">View Packages</button> -->
 
-
-        <!-- TODO -->
-        <button onclick="window.location.href='../src/packages.php'" class="customer-option-button">View Packages</button>
-
-        <button onclick="window.location.href='../src/countorder.php'" class="customer-option-button">Number of Orders</button>
-        <br/>
-        <br/>
-        <form method="post">
-            <label for="date">Which week:</label>
-            <select name="date" id="date">
-                <!-- <option value="clear">Clear</option> -->
-                <option value="2020-05-01">2020-05-01</option>
-                <option value="2020-05-08">2020-05-08</option>
-                <option value="2020-05-15">2020-05-15</option>
-                <option value="2020-05-22">2020-05-22</option>
-                <option value="2020-05-28">2020-05-28</option>
-            </select>
-            <input type="submit" class="customer-option-button" value="View Weekly Schedule">
-        </form>
+            <form method="post">
+                <input name="numorder" type="submit" class="customer-option-button" value="Numbers of Orders">
+            </form>
+            <br />
+            <br />
+            <form method="post">
+                <label for="date">Which week:</label>
+                <select name="date" id="date">
+                    <!-- <option value="clear">Clear</option> -->
+                    <option value="2020-05-01">2020-05-01</option>
+                    <option value="2020-05-08">2020-05-08</option>
+                    <option value="2020-05-15">2020-05-15</option>
+                    <option value="2020-05-22">2020-05-22</option>
+                    <option value="2020-05-28">2020-05-28</option>
+                </select>
+                <input type="submit" class="customer-option-button" value="View Weekly Schedule">
+            </form>
+        </div>
     </div>
 </body>
 
 <?php
+if (isset($_POST['route'])) {
+    include 'routes.php';
+    Route();
+}
+if (isset($_POST['package'])) {
+    include 'packages.php';
+    Package();
+}
+if (isset($_POST['numorder'])) {
+    include 'countorder.php';
+    numOrder();
+}
 if (isset($_POST['date'])) {
     include 'schedule.php';
-    Schedule($_POST['date']);
+    Schedule();
 }
 ?>
 

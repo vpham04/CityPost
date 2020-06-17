@@ -42,37 +42,38 @@ include 'connect.php';
 
 <body>
 
-<?php
-function deleteRoute()
-{
-    $conn = OpenCon();
-    $sql = "SELECT ar.RID as RID, sr.SSN as MSSN, Distance, ar.SSN as CSSN FROM AssignedRoute ar, SetsRoute sr
-    WHERE ar.RID = sr.RID";
-    $result = $conn->query($sql);
+    <?php
+    function deleteRoute()
+    {
+        echo "<h1 class='title'>Delete route</h1>";
+        $conn = OpenCon();
+        $sql = "SELECT ar.RID as RID, sr.SSN as MSSN, Distance, ar.SSN as CSSN FROM AssignedRoute ar, SetsRoute sr
+        WHERE ar.RID = sr.RID";
+        $result = $conn->query($sql);
 
-    if ($result->num_rows > 0) {
-        echo "<table>
+        if ($result->num_rows > 0) {
+            echo "<table>
             <tr>
                 <th class='border-class'>RID</th>
                 <th class='border-class'>Manager that created</th>
                 <th class='border-class'>Distance</th>
                 <th class='border-class'>Courier assigned</th>
             </tr>";
-        while ($row = $result->fetch_assoc()) {
-            echo
-                "<tr>
+            while ($row = $result->fetch_assoc()) {
+                echo
+                    "<tr>
                 <td class='border-class'>" . $row["RID"] . "</td>
                 <td class='border-class'>" . $row["MSSN"] . "</td>
                 <td class='border-class'>" . $row["Distance"] . "</td>
                 <td class='border-class'>" . $row["CSSN"] . "</td>
             </tr>";
+            }
+            echo "</table>";
+        } else {
+            echo "0 results";
         }
-        echo "</table>";
-    } else {
-        echo "0 results";
-    }
-    echo "<div id='delete'>";
-    echo "<form action='../src/droproute.php' method='post'>";
+        echo "<div id='delete'>";
+        echo "<form action='../src/droproute.php' method='post'>";
         echo "<label>Delete:</label>";
 
         $conn = OpenCon();
@@ -88,9 +89,10 @@ function deleteRoute()
         CloseCon($conn);
 
         echo "<input type='submit' id='delete-button' value='Delete route'>";
-    echo "</form>";
-echo "</div>";
-}
-?>
+        echo "</form>";
+        echo "</div>";
+    }
+    ?>
 </body>
+
 </html>

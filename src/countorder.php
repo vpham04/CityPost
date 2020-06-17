@@ -1,24 +1,24 @@
 <?php
-session_start();
+function numOrder()
+{
 
-// TODO: Move this courier so it prints "Orders to fulfill: ____"
+    include 'connect.php';
+    $conn = OpenCon();
 
-include 'connect.php';
-$conn = OpenCon();
+    $sql = "SELECT COUNT(Distinct OID) as NUM
+    FROM IntransitParcel ip, Parcel p
+    WHERE ip.VID = p.VID AND ip.SSN IN 
+    (SELECT SSN 
+    FROM Accounts
+    WHERE Username = '" . $_SESSION["username"] . "')";
+    $result = $conn->query($sql) or die($conn->error);
+    $row = $result->fetch_assoc();
+    $NUM = $row['NUM'];
 
-$sql = "SELECT COUNT(Distinct OID) as NUM
-FROM IntransitParcel ip, Parcel p
-WHERE ip.VID = p.VID AND ip.SSN IN 
-(SELECT SSN 
-FROM Accounts
-WHERE Username = '".$_SESSION["username"]."')";
-$result = $conn->query($sql) or die($conn->error);
-$row = $result->fetch_assoc();
-$NUM = $row['NUM'];
-
-if ($result->num_rows > 0) {
-    echo $NUM;
-} else {
-    echo "No orders to fulfill";
+    if ($result->num_rows > 0) {
+        echo "<h1 class='title'>Orders to fulfill: " . $NUM . "</h1>";
+    } else {
+        echo "No orders to fulfill";
+    }
+    CloseCon($conn);
 }
-CloseCon($conn);

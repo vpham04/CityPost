@@ -44,6 +44,7 @@ include 'connect.php';
         CloseCon($conn);
         ?>
     </div> -->
+    <h1 class="title">Set route</h1>
     <div class="parcel-form">
         <form action="addRoute.php" method="post">
             <label for="Distance">Distance</label>
@@ -56,7 +57,7 @@ include 'connect.php';
                 $result = $conn->query($ESSN);
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                        echo "<option value='" . $row[SSN] . "'>" . $row[SSN] . "</option>";
+                        echo "<option value='" . $row['SSN'] . "'>" . $row['SSN'] . "</option>";
                     }
                 }
                 CloseCon($conn);
