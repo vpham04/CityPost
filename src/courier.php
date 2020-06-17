@@ -67,7 +67,7 @@ session_start();
 
 
         <!-- TODO -->
-        <button onclick="window.location.href='../src/packages.php'" class="customer-option-button">View Packages</button>
+        <button onclick="window.location.href='../src/courierOrders.php'" class="customer-option-button">View Current Orders</button>
 
         <button onclick="window.location.href='../src/countorder.php'" class="customer-option-button">Number of Orders</button>
     </div>
