@@ -15,7 +15,7 @@ session_start();
 
 <body>
     <div class="header">
-        <h1>Courier</h1>
+        <h1>Courier Page</h1>
         <?php
         $_SESSION['returnpage'] = '../src/courier.php';
         echo "Hello " . $_SESSION["username"] . "<br/>";
