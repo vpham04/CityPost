@@ -74,7 +74,7 @@ function ScheduleAll() {
     //     exit;
     // } else {
 
-    echo "<h1 id='schedule'>Schedule</h1>";
+    echo "<h1 id='schedule'>Employees Scheduled every week</h1>";
 
     $sql = "SELECT e.SSN, e.Name
             from Employee e
