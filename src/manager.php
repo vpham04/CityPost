@@ -70,7 +70,7 @@ session_start();
         <form method="post">
             <input name="employee" id="employee" type="submit" class="customer-option-button"  value="View Employees">
         </form>
-        <button onclick="window.location.href='../src/routes.php'" class="customer-option-button">Set Route</button>
+        <button onclick="window.location.href='../src/setRoute.php'" class="customer-option-button">Set Route</button>
         <button onclick="window.location.href='../src/deleteroute.php'" class="customer-option-button">Delete Route</button>
         <!-- TODO: -->
         <button onclick="window.location.href='../src/invoice.php'" class="customer-option-button">See spenders</button>
