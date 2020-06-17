@@ -37,7 +37,7 @@ session_start();
             padding: 10px 10px 10px;
             text-align: center;
         }
-        
+
         .button-container form,
         .button-container form div {
             display: inline-block;
@@ -47,7 +47,6 @@ session_start();
             display: inline;
             vertical-align: middle;
         }
-
     </style>
 </head>
 
@@ -65,13 +64,13 @@ session_start();
     </div>
 
     <div class="customer-options">
-        <!-- <button onclick="window.location.href='../src/schedule.php'" class="customer-option-button">View Schedule</button> -->
         <div class="button-container">
             <form method="post">
-                <input name="employee" type="submit" class="customer-option-button"  value="View Employees">
+                <input name="employee" type="submit" class="customer-option-button" value="View Employees">
             </form>
-            <button onclick="window.location.href='../src/setRoute.php'" class="customer-option-button">Set Route</button>
-            <!-- TODO: -->
+            <form method="post">
+                <input name="setroute" type="submit" class="customer-option-button" value="Set Route">
+            </form>
             <form method="post">
                 <input name="route" type="submit" class="customer-option-button" value="Delete Route">
             </form>
@@ -79,7 +78,7 @@ session_start();
                 <input name="profit" type="submit" class="customer-option-button" value="See spender">
             </form>
         </div>
-        <br/>
+        <br />
         <div class="button-container">
             <form method="post">
                 <label for="date">Which week:</label>
@@ -97,7 +96,7 @@ session_start();
                 <input name="employeeAll" type="submit" class="customer-option-button" value="Employee scheduled for all weeks">
             </form>
         </div>
-        <br/>
+        <br />
         <form method="post">
             <label for="date">Which contact:</label>
             <input type="radio" id="phone" name="contact" value="Email">
@@ -133,6 +132,10 @@ if (isset($_POST['profit'])) {
 if (isset($_POST['employeeAll'])) {
     include 'schedule.php';
     ScheduleAll();
+}
+if (isset($_POST['setroute'])) {
+    include 'setRoute.php';
+    SetRoute();
 }
 ?>
 

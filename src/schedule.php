@@ -65,7 +65,8 @@ function Schedule()
     CloseCon($conn);
     // }
 }
-function ScheduleAll() {
+function ScheduleAll()
+{
     include 'connect.php';
     $conn = OpenCon();
 
@@ -96,7 +97,7 @@ function ScheduleAll() {
         while ($row = $result->fetch_assoc()) {
             echo
                 "<tr>
-                    <td class='border=class'>" . $row["SSN"] . "</td>
+                    <td class='border-class'>" . $row["SSN"] . "</td>
                     <td class='border-class'>" . $row["Name"] . "</td>
                 </tr>";
         }

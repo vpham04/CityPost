@@ -11,44 +11,44 @@ include 'connect.php';
     <Title>Routes</Title>
     <link rel="stylesheet" href="styles.css">
     <style>
-     h1 {
-		 text-align: center;
-	 }
+        h1 {
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
     <div class="header">
         <h1>Route Added</h1>
-        <?php 
+        <?php
         $conn = OpenCon();
 
-		$max = "SELECT MAX(RID) as id FROM AssignedRoute";
-		$resultmax = $conn->query($max);
-		$row = $resultmax->fetch_assoc();
-		$RID = $row['id'] + 1;
-		//echo $RID . "\n";
-		$Distance = $_POST['Distance'];
+        $max = "SELECT MAX(RID) as id FROM AssignedRoute";
+        $resultmax = $conn->query($max);
+        $row = $resultmax->fetch_assoc();
+        $RID = $row['id'] + 1;
+        //echo $RID . "\n";
+        $Distance = $_POST['Distance'];
         $SSN = $_POST['SSN'];
-		// echo $RID;
-        
+        // echo $RID;
+
         $sql = 'INSERT into AssignedRoute(RID,Distance,SSN)
-        VALUES ('.$RID.', '.$Distance.','.$SSN.')';
+        VALUES (' . $RID . ', ' . $Distance . ',' . $SSN . ')';
         $result = $conn->query($sql);
-	 
-		
-		$ManagerSSN = "SELECT SSN from Accounts A where A.username = '".$_SESSION['username']."'";
+
+
+        $ManagerSSN = "SELECT SSN from Accounts A where A.username = '" . $_SESSION['username'] . "'";
         $resultSSN = $conn->query($ManagerSSN);
         $row = $resultSSN->fetch_assoc();
-		$ManagerSSN = $row['SSN'];
-		// echo $ManagerSSN;
-		// echo $RID . "\n";
-		$sql = 'INSERT into SetsRoute(SSN,RID)
-        VALUES ('.$ManagerSSN.','.$RID.')';
-		$result = $conn->query($sql);
-		
+        $ManagerSSN = $row['SSN'];
+        // echo $ManagerSSN;
+        // echo $RID . "\n";
+        $sql = 'INSERT into SetsRoute(SSN,RID)
+        VALUES (' . $ManagerSSN . ',' . $RID . ')';
+        $result = $conn->query($sql);
+
         closeCon($conn);
-        header("refresh:1;url='../src/setRoute.php'");
+        header("refresh:1;url='../src/manager.php'");
         exit;
         ?>
         <!-- php for customer info -->
