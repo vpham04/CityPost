@@ -1,3 +1,3 @@
 # CityPost
 
-Start website on localhost/src/main.html
+Simple courier web page using HTML, CSS, PHP and SQL
